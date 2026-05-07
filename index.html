@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Integral Loans — Your Trusted Loan Advisor</title>
+<meta name="description" content="Affordable EMIs. Transparent processes. Faster approvals. Personalized loan support across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar & Palghar."/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="WhatsApp Image 2026-05-05 at 11.20.59.jpeg" alt="Integral Loans Logo"/>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#how-we-work">Process</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <button class="btn btn-primary" onclick="openModal('General Inquiry')"><i class="fa fa-phone"></i> Get Free Consultation</button>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge"><i class="fa fa-shield-halved"></i> 16+ Years of Trusted Expertise</div>
+    <h1>Integral Loans — Your Trusted Loan Advisor for <span>Every Stage of Life</span></h1>
+    <p class="hero-sub">Affordable EMIs. Transparent processes. Faster approvals. Personalized support across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-gold" onclick="openModal('General Inquiry')"><i class="fa fa-comments"></i> Get Your Free Loan Consultation</button>
+      <button class="btn btn-outline" onclick="openModal('General Inquiry')" style="border-color:rgba(255,255,255,0.5);color:white;"><i class="fa fa-file-alt"></i> Apply Now</button>
+    </div>
+    <div class="trust-badges">
+      <div class="trust-badge"><i class="fa fa-lock" style="color:#2ab4c0"></i> 100% Secure</div>
+      <div class="trust-badge"><i class="fa fa-bolt" style="color:#2ab4c0"></i> Fast Approval</div>
+      <div class="trust-badge"><i class="fa fa-check-circle" style="color:#2ab4c0"></i> Zero Hidden Charges</div>
+    </div>
+  </div>
+  <svg class="hero-visual" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="180" stroke="white" stroke-width="2"/>
+    <circle cx="200" cy="200" r="130" stroke="white" stroke-width="1.5"/>
+    <circle cx="200" cy="200" r="80" stroke="white" stroke-width="1"/>
+    <line x1="20" y1="200" x2="380" y2="200" stroke="white" stroke-width="1"/>
+    <line x1="200" y1="20" x2="200" y2="380" stroke="white" stroke-width="1"/>
+  </svg>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="text-center">
+    <span class="section-tag">Our Services</span>
+    <h2 class="section-title">Explore Our Loan Products</h2>
+    <p class="section-sub">Expert guidance across all major loan categories with personalized support and transparent processes.</p>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fa fa-house" style="width:28px;height:28px;font-size:1.4rem;color:white;display:flex;align-items:center;justify-content:center;"></i></div>
+      <h3>Home Loans</h3>
+      <p>Find your dream home with our competitive home loan options starting at 7.10% p.a. Expert guidance from application to disbursal.</p>
+      <div class="service-btns">
+        <a href="home-loan.html" target="_blank" class="btn-sm btn-sm-outline">Learn More</a>
+        <button class="btn-sm btn-sm-primary" onclick="openModal('Home Loan')">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fa fa-building-columns" style="width:28px;height:28px;font-size:1.4rem;color:white;display:flex;align-items:center;justify-content:center;"></i></div>
+      <h3>Mortgage Loans</h3>
+      <p>Unlock the value of your property with our mortgage loan solutions. Get competitive rates and flexible repayment options.</p>
+      <div class="service-btns">
+        <a href="mortgage-loan.html" target="_blank" class="btn-sm btn-sm-outline">Learn More</a>
+        <button class="btn-sm btn-sm-primary" onclick="openModal('Mortgage Loan')">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fa fa-briefcase" style="width:28px;height:28px;font-size:1.4rem;color:white;display:flex;align-items:center;justify-content:center;"></i></div>
+      <h3>SME Loans</h3>
+      <p>Grow your business with our tailored SME loan products designed for small and medium enterprises across all sectors.</p>
+      <div class="service-btns">
+        <a href="sme-loan.html" target="_blank" class="btn-sm btn-sm-outline">Learn More</a>
+        <button class="btn-sm btn-sm-primary" onclick="openModal('SME Loan')">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fa fa-wallet" style="width:28px;height:28px;font-size:1.4rem;color:white;display:flex;align-items:center;justify-content:center;"></i></div>
+      <h3>Personal Loans</h3>
+      <p>Meet your personal financial needs with our flexible personal loan options. Quick processing with minimal documentation.</p>
+      <div class="service-btns">
+        <a href="personal-loan.html" target="_blank" class="btn-sm btn-sm-outline">Learn More</a>
+        <button class="btn-sm btn-sm-primary" onclick="openModal('Personal Loan')">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fa fa-graduation-cap" style="width:28px;height:28px;font-size:1.4rem;color:white;display:flex;align-items:center;justify-content:center;"></i></div>
+      <h3>Education Loans</h3>
+      <p>Fund your education and career goals with our education loan solutions. Invest in your future with confidence.</p>
+      <div class="service-btns">
+        <a href="education-loan.html" target="_blank" class="btn-sm btn-sm-outline">Learn More</a>
+        <button class="btn-sm btn-sm-primary" onclick="openModal('Education Loan')">Apply Now</button>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon"><i class="fa fa-car" style="width:28px;height:28px;font-size:1.4rem;color:white;display:flex;align-items:center;justify-content:center;"></i></div>
+      <h3>Vehicle Loans</h3>
+      <p>Drive your dream vehicle with our competitive vehicle loan options. Affordable EMIs and faster approval process.</p>
+      <div class="service-btns">
+        <a href="vehicle-loan.html" target="_blank" class="btn-sm btn-sm-outline">Learn More</a>
+        <button class="btn-sm btn-sm-primary" onclick="openModal('Vehicle Loan')">Apply Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-us" id="why-us">
+  <div class="text-center">
+    <span class="section-tag">Why Choose Us</span>
+    <h2 class="section-title">Why Thousands Trust Integral Loans</h2>
+    <p class="section-sub">We don't just process loans — we advocate for you every step of the way.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon"><i class="fa fa-handshake" style="font-size:1.2rem;color:white;"></i></div>
+      <div>
+        <h4>End-to-End Representation</h4>
+        <p>We prepare, present and follow up loan applications with banks on your behalf — you focus on your goals.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa fa-scale-balanced" style="font-size:1.2rem;color:white;"></i></div>
+      <div>
+        <h4>Experienced Negotiators</h4>
+        <p>Years of lender relationships and negotiation expertise to get you favorable terms and faster approvals.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa fa-location-dot" style="font-size:1.2rem;color:white;"></i></div>
+      <div>
+        <h4>Local Presence &amp; Quick Support</h4>
+        <p>Services across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar for timely, in-person help.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa fa-layer-group" style="font-size:1.2rem;color:white;"></i></div>
+      <div>
+        <h4>Comprehensive Loan Coverage</h4>
+        <p>Assistance across Home, Mortgage, SME, Personal, Education and Vehicle loans — one trusted partner for all.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa fa-user-tie" style="font-size:1.2rem;color:white;"></i></div>
+      <div>
+        <h4>Personalized Guidance</h4>
+        <p>Tailored EMI options and repayment solutions designed around your cash flow and financial goals.</p>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon"><i class="fa fa-star" style="font-size:1.2rem;color:white;"></i></div>
+      <div>
+        <h4>16+ Years of Expertise</h4>
+        <p>Deep knowledge of how banks and NBFCs operate — we match your profile with the lender who serves you best.</p>
+      </div>
+    </div>
+  </div>
+  <div class="expertise-banner">
+    <div>
+      <h3>Your Bridge to the Right Lender</h3>
+      <p>At Integral Loans, we collaborate with all major Nationalised Banks, Private Banks, and NBFCs across India. Every lender operates with different products, interest rates, and policies. One wrong choice can lead to higher EMIs or unfavorable terms for years. With 16+ years of core financial experience, we act as your personal financial shield — matching your profile to the lender whose policies serve you best.</p>
+    </div>
+    <div class="expertise-stat">
+      <div class="stat-item">
+        <div class="stat-number">16+</div>
+        <div class="stat-label">Years of Core Financial Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Cities Served Across MMR &amp; Palghar</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Loan Products Under One Roof</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-we-work" id="how-we-work">
+  <div class="text-center">
+    <span class="section-tag">Our Process</span>
+    <h2 class="section-title">How We Work</h2>
+    <p class="section-sub">A simple, transparent 3-step process guided by experts — from consultation to disbursal.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <h4>Free Consultation</h4>
+      <p>Share your needs — property plan, business plan, education fees or vehicle details. We listen, understand and advise.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <h4>Document &amp; Application</h4>
+      <p>We assist to prepare documentation, shortlist suitable lenders and submit applications on your behalf.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <h4>Negotiation &amp; Disbursal</h4>
+      <p>We negotiate terms, follow up closely and assist until the loan is disbursed to your account.</p>
+    </div>
+  </div>
+  <div class="client-promise">
+    <h3><i class="fa fa-quote-left" style="color:#2ab4c0;margin-right:8px;"></i> Our Client Promise</h3>
+    <p>Clear timelines, proactive communication, and relentless pursuit of the best terms for your loan — every time.</p>
+  </div>
+</section>
+
+<!-- REGIONS -->
+<section class="regions" id="regions">
+  <div class="text-center">
+    <span class="section-tag" style="background:rgba(255,255,255,0.15);color:white;">Service Regions</span>
+    <h2 class="section-title" style="color:white;">Our Service Regions</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.8);margin:0 auto;">We proudly serve clients across the Mumbai Metropolitan Region and beyond. Our local presence means we understand the regional banking dynamics, giving you a competitive edge.</p>
+  </div>
+  <div class="regions-grid">
+    <div class="region-chip"><i class="fa fa-map-marker-alt"></i> Mumbai</div>
+    <div class="region-chip"><i class="fa fa-map-marker-alt"></i> Thane</div>
+    <div class="region-chip"><i class="fa fa-map-marker-alt"></i> Navi Mumbai</div>
+    <div class="region-chip"><i class="fa fa-map-marker-alt"></i> Mira Bhayander</div>
+    <div class="region-chip"><i class="fa fa-map-marker-alt"></i> Vasai-Virar</div>
+    <div class="region-chip"><i class="fa fa-map-marker-alt"></i> Palghar</div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="text-center">
+    <span class="section-tag">Client Reviews</span>
+    <h2 class="section-title">What Clients Say About Us</h2>
+    <p class="section-sub">Real experiences from real people we've helped across the region.</p>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>Integral Loans made the entire home loan process simple and stress-free. Their team explained every step clearly, helped with documentation, and followed up with the bank until approval. Truly professional and reliable.</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">RM</div>
+        <div>
+          <div class="reviewer-name">Rohit Mehta</div>
+          <div class="reviewer-loc"><i class="fa fa-location-dot"></i> Mumbai</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>I approached Integral Loans for a personal loan during an urgent family requirement, and they guided me with patience and clarity. The EMI options were affordable, and the process was much faster than I expected.</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">PS</div>
+        <div>
+          <div class="reviewer-name">Priya Shah</div>
+          <div class="reviewer-loc"><i class="fa fa-location-dot"></i> Thane</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>What I appreciated most was their transparency and quick response. From application to disbursal, the team stayed in touch and made sure everything moved smoothly. Excellent support throughout.</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">SK</div>
+        <div>
+          <div class="reviewer-name">Sandeep Kulkarni</div>
+          <div class="reviewer-loc"><i class="fa fa-location-dot"></i> Navi Mumbai</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>Integral Loans helped me secure an education loan with minimal hassle. They understood my needs, suggested the right lender, and handled the paperwork efficiently. I felt supported at every stage.</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">NK</div>
+        <div>
+          <div class="reviewer-name">Neha Kapoor</div>
+          <div class="reviewer-loc"><i class="fa fa-location-dot"></i> Mira Bhayander</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>I needed a business loan for my SME, and Integral Loans delivered great guidance and strong lender coordination. Their local presence and personalized approach made a real difference. Highly recommended.</blockquote>
+      <div class="reviewer">
+        <div class="reviewer-avatar">AJ</div>
+        <div>
+          <div class="reviewer-name">Amit Joshi</div>
+          <div class="reviewer-loc"><i class="fa fa-location-dot"></i> Vasai-Virar</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="text-center">
+    <span class="section-tag">Get In Touch</span>
+    <h2 class="section-title">Ready to Take the First Step?</h2>
+    <p class="section-sub">Contact us today to learn more about our loan services and how we can help you differently.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+        <span><a href="mailto:info@integralloans.com">info@integralloans.com</a></span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa fa-phone"></i></div>
+        <span><a href="tel:+919167331557">91673 31557</a></span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa fa-location-dot"></i></div>
+        <span>Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar</span>
+      </div>
+      <h3 style="margin-top:28px;">Follow Us</h3>
+      <p style="font-size:0.9rem;color:#4a6080;margin-bottom:14px;">Stay updated with the latest financial insights and loan offers.</p>
+      <div class="social-links">
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=61565319757420" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a class="social-link" href="https://www.instagram.com/integralloans/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a class="social-link" href="https://x.com/IntegralLoans" target="_blank" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        <a class="social-link" href="https://www.linkedin.com/company/115806565/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a class="social-link" href="https://www.youtube.com/@IntegralLoans" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="inquiry-form">
+      <h3>Send Us an Inquiry</h3>
+      <form id="contactForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Full Name *</label>
+            <input type="text" id="cf-name" placeholder="Your full name" required/>
+          </div>
+          <div class="form-group">
+            <label for="cf-phone">Mobile Number *</label>
+            <input type="tel" id="cf-phone" placeholder="10-digit number" required/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Email Address</label>
+          <input type="email" id="cf-email" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label for="cf-loan">Loan Type *</label>
+          <select id="cf-loan" required>
+            <option value="">Select loan type</option>
+            <option>Home Loan</option>
+            <option>Mortgage Loan</option>
+            <option>SME Loan</option>
+            <option>Personal Loan</option>
+            <option>Education Loan</option>
+            <option>Vehicle Loan</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-message">Message (Optional)</label>
+          <textarea id="cf-message" placeholder="Tell us about your requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+          <i class="fa fa-paper-plane"></i> Send Inquiry
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="WhatsApp Image 2026-05-05 at 11.20.59.jpeg" alt="Integral Loans"/>
+    </div>
+    <p class="footer-note">Integral Loans — Trusted loan advisors committed to affordable EMIs, transparent service and faster loan approvals.</p>
+    <p class="footer-copy">&copy; 2026 Integral Loans. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- INQUIRY MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <span class="loan-type-badge" id="modalLoanBadge">General Inquiry</span>
+    <h2>Apply for Your Loan</h2>
+    <p class="modal-subtitle">Fill in the details below and our expert will contact you within 24 hours.</p>
+    <form onsubmit="handleModalSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="m-name">Full Name *</label>
+          <input type="text" id="m-name" placeholder="Your name" required/>
+        </div>
+        <div class="form-group">
+          <label for="m-phone">Mobile *</label>
+          <input type="tel" id="m-phone" placeholder="Mobile number" required/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="m-email">Email</label>
+        <input type="email" id="m-email" placeholder="Email address"/>
+      </div>
+      <div class="form-group">
+        <label for="m-loan">Loan Type</label>
+        <select id="m-loan">
+          <option>Home Loan</option>
+          <option>Mortgage Loan</option>
+          <option>SME Loan</option>
+          <option>Personal Loan</option>
+          <option>Education Loan</option>
+          <option>Vehicle Loan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="m-amount">Approximate Loan Amount</label>
+        <input type="text" id="m-amount" placeholder="e.g. ₹25 Lakhs"/>
+      </div>
+      <div class="form-group">
+        <label for="m-city">City</label>
+        <select id="m-city">
+          <option value="">Select city</option>
+          <option>Mumbai</option>
+          <option>Thane</option>
+          <option>Navi Mumbai</option>
+          <option>Mira Bhayander</option>
+          <option>Vasai-Virar</option>
+          <option>Palghar</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+        <i class="fa fa-paper-plane"></i> Submit Application
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS TOAST -->
+<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2);display:none;z-index:3000;font-weight:600;font-size:0.9rem;align-items:center;gap:10px;">
+  <i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you! We'll contact you soon.</span>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
