@@ -50,7 +50,7 @@ Get in Touch
 Ready to take the first step towards your financial goals? Contact us today to learn more about our loan Services and how we can help you differently.
 Contact Information
 Email: info@integralloans.com
-Mobile: 91673 31557
+Mobile: 9099009881 / 9099009882
 Locations: Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar, and Palghar.
 
 
@@ -242,7 +242,7 @@ Ready to Begin Your Homeownership Journey?
 Get expert support for your home loan and move forward with confidence.
 Contact Us
 Email: info@integralloans.com
-Mobile: 91673 31557
+Mobile: 9099009881 / 9099009882
 CTA Buttons
 Speak to an Expert
 Check EMI & Eligibility
@@ -266,7 +266,7 @@ With the right guidance, the right loan, and the right partner, your dream home 
 Integral Loans brings together expertise, transparency, and personalized service to help you secure the home loan that suits you best.
 Start today. Let’s build your future, one step at a time.
 Email: info@integralloans.com
-Mobile: 91673 31557
+Mobile: 9099009881 / 9099009882
 
 Short Premium Banner Copy Options
 You can use any of these as homepage banners or ad creatives:
