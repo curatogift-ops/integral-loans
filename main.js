@@ -1,3 +1,24 @@
+// Region chip → scroll to contact and pre-fill city
+function selectRegion(city) {
+    const citySelect = document.getElementById('cf-city');
+    const modalCity = document.getElementById('m-city');
+    if (citySelect) {
+        const opt = Array.from(citySelect.options).find(o => o.text === city || o.value === city);
+        if (opt) citySelect.value = opt.value || city;
+    }
+    if (modalCity) {
+        const opt = Array.from(modalCity.options).find(o => o.text === city);
+        if (opt) modalCity.value = opt.value || city;
+    }
+    const contact = document.getElementById('contact');
+    if (contact) {
+        const offset = 108;
+        const top = contact.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }
+    if (citySelect) citySelect.focus();
+}
+
 // Mobile Menu Toggle
 function toggleMenu() {
     const navLinks = document.getElementById('navLinks');
@@ -33,8 +54,9 @@ const modalLoanBadge = document.getElementById('modalLoanBadge');
 const modalLoanSelect = document.getElementById('m-loan');
 
 function openModal(loanType = 'General Inquiry') {
+    if (!modalOverlay) return;
     modalOverlay.classList.add('active');
-    modalLoanBadge.textContent = loanType;
+    if (modalLoanBadge) modalLoanBadge.textContent = loanType;
     
     // Set select value if it matches
     if (modalLoanSelect) {
@@ -48,6 +70,7 @@ function openModal(loanType = 'General Inquiry') {
 }
 
 function closeModal() {
+    if (!modalOverlay) return;
     modalOverlay.classList.remove('active');
     document.body.style.overflow = 'auto';
 }
@@ -62,6 +85,7 @@ function closeModalOutside(event) {
 function showToast(message) {
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toastMsg');
+    if (!toast || !toastMsg) return;
     toastMsg.textContent = message;
     toast.style.display = 'flex';
     
@@ -86,6 +110,69 @@ function handleModalSubmit(event) {
     event.target.reset();
 }
 
+// Testimonials carousel (3 visible per slide)
+(function initTestimonialsCarousel() {
+    const track = document.getElementById('testimonialsTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    if (!track || !dotsContainer) return;
+
+    const cards = Array.from(track.querySelectorAll('.testimonial-card'));
+    if (cards.length === 0) return;
+
+    let currentPage = 0;
+
+    function cardsPerView() {
+        if (window.innerWidth <= 600) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    function totalPages() {
+        return Math.max(1, Math.ceil(cards.length / cardsPerView()));
+    }
+
+    function buildDots() {
+        dotsContainer.innerHTML = '';
+        const pages = totalPages();
+        for (let i = 0; i < pages; i++) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to review set ${i + 1}`);
+            dot.addEventListener('click', () => goToPage(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function goToPage(page) {
+        const perView = cardsPerView();
+        const pages = totalPages();
+        currentPage = ((page % pages) + pages) % pages;
+        const cardWidth = cards[0].offsetWidth + 24;
+        track.style.transform = `translateX(-${currentPage * cardWidth * perView}px)`;
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentPage);
+        });
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goToPage(currentPage - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToPage(currentPage + 1));
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            buildDots();
+            goToPage(Math.min(currentPage, totalPages() - 1));
+        }, 150);
+    });
+
+    buildDots();
+    goToPage(0);
+})();
+
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -102,7 +189,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 toggleMenu();
             }
             
-            const offset = 80;
+            const offset = 108;
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -113,3 +200,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Mobile dropdown toggle logic
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (!dropdown) return;
+    const trigger = dropdown.querySelector('a');
+    trigger.addEventListener('click', (e) => {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        }
+    });
+});
+

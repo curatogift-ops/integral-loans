@@ -4,256 +4,297 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Home Loan Starting at 7.10% p.a. | Premium Home Loan Assistance by Integral Loans</title>
-<meta name="description" content="Apply for a home loan starting at 7.10% p.a. with expert guidance from Integral Loans. Check your EMI, explore benefits, and get personalized support."/>
+<meta name="description" content="Apply for a home loan starting at 7.10% p.a. with expert guidance from Integral Loans. Check your EMI, explore benefits, and get personalized support for a smoother loan journey."/>
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<style>
-    .lp-hero { padding: 140px 5% 80px; background: linear-gradient(rgba(26, 58, 107, 0.9), rgba(26, 58, 107, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; color: white; text-align: center; }
-    .lp-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); margin-bottom: 20px; max-width: 900px; margin-left: auto; margin-right: auto; }
-    .lp-hero p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 30px; opacity: 0.9; }
-    .calc-section { background: var(--white); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-lg); margin-top: -60px; position: relative; z-index: 10; max-width: 1000px; margin-left: auto; margin-right: auto; }
-    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .calc-inputs { display: flex; flex-direction: column; gap: 20px; }
-    .calc-range-group { display: flex; flex-direction: column; gap: 8px; }
-    .calc-range-group label { font-weight: 600; font-size: 0.9rem; color: var(--text-dark); display: flex; justify-content: space-between; }
-    .calc-range-group input[type="range"] { accent-color: var(--accent); }
-    .calc-result { background: var(--gray-100); border-radius: var(--radius); padding: 30px; text-align: center; display: flex; flex-direction: center; flex-direction: column; justify-content: center; border: 1px dashed var(--accent); }
-    .emi-amount { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin: 10px 0; }
-    .lp-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 50px; }
-    .lp-feature-card { padding: 30px; background: var(--off-white); border-radius: var(--radius); border-left: 4px solid var(--accent); }
-    .lp-feature-card h4 { margin-bottom: 10px; color: var(--primary); }
-    .docs-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
-    .docs-category { background: var(--white); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow-sm); }
-    .docs-category h4 { margin-bottom: 15px; border-bottom: 2px solid var(--gray-200); padding-bottom: 10px; color: var(--primary); }
-    .docs-category ul { padding-left: 20px; list-style: disc; color: var(--gray-600); font-size: 0.9rem; }
-    .docs-category li { margin-bottom: 8px; }
-    @media (max-width: 768px) { .calc-grid { grid-template-columns: 1fr; } }
-</style>
 </head>
 <body>
 
-<!-- NAVBAR (Simplified for Landing Page) -->
-<nav class="navbar scrolled">
+<div class="nav-top-bar">
+  <span><i class="fa fa-clock"></i> Mon–Sat: 10:00 AM – 7:00 PM</span>
+  <a href="tel:+919167331557"><i class="fa fa-phone"></i> +91 91673 31557</a>
+</div>
+
+<nav class="navbar" id="navbar">
   <a class="nav-logo" href="index.html">
-    <img src="WhatsApp Image 2026-05-05 at 11.20.59.jpeg" alt="Integral Loans Logo"/>
+    <img src="final-logo.png" alt="Integral Loans" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <span class="nav-logo-text" style="display:none">Integral Loans</span>
   </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#home">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#services">Services <i class="fa fa-chevron-down" style="font-size:0.75rem;margin-left:4px;"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="home-loan.html">Home Loan</a></li>
+        <li><a href="mortgage-loan.html">Mortgage Loan</a></li>
+        <li><a href="sme-loan.html">SME Loan</a></li>
+        <li><a href="personal-loan.html">Personal Loan</a></li>
+        <li><a href="education-loan.html">Education Loan</a></li>
+        <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
   <div class="nav-cta">
-    <a href="tel:+919167331557" class="btn btn-outline"><i class="fa fa-phone"></i> Call Now</a>
+    <button class="btn btn-primary" onclick="openModal('Home Loan')"><i class="fa fa-phone"></i> Apply Now</button>
   </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- HERO -->
-<section class="lp-hero">
-  <span class="hero-badge" style="background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white;">Home Loan Assistance</span>
+<p class="breadcrumb"><a href="index.html">Home</a> / Home Loan</p>
+
+<section class="loan-page-hero">
   <h1>Own Your Dream Home with a Home Loan Designed Around Your Goals</h1>
-  <p>At Integral Loans, we help you secure a home loan with confidence, clarity, and personalized support. Enjoy competitive interest rates starting at 7.10% p.a.</p>
-  <div class="hero-ctas" style="justify-content: center;">
-    <button class="btn btn-gold" onclick="openModal('Home Loan')">Check Your Eligibility</button>
-    <a href="#calculator" class="btn btn-outline" style="border-color:white;color:white;">Calculate EMI Now</a>
+  <p class="hero-sub">At Integral Loans, we help you secure a home loan with confidence, clarity, and personalized support. Enjoy competitive interest rates starting at 7.10% p.a., expert loan guidance, and a seamless application experience built to make homeownership simpler.</p>
+  <div class="hero-ctas" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap;">
+    <button class="btn btn-primary" onclick="openModal('Home Loan')"><i class="fa fa-check-circle"></i> Check Your Eligibility</button>
+    <a href="#emi-calculator" class="btn btn-outline btn-hero-outline"><i class="fa fa-calculator"></i> Calculate EMI Now</a>
   </div>
-  <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.8;">Transparent process. Expert support. Faster response. Better loan outcomes.</p>
+  <p class="loan-trust-line">Transparent process. Expert support. Faster response. Better loan outcomes.</p>
 </section>
 
-<!-- CALCULATOR -->
-<section style="padding-top: 0;" id="calculator">
-  <div class="calc-section">
-    <div class="text-center" style="margin-bottom: 30px;">
-      <h2 style="font-size: 1.5rem; color: var(--primary);">Estimate Your Monthly EMI Instantly</h2>
-      <p style="font-size: 0.9rem; color: var(--gray-600);">Plan your finances better with our instant calculator.</p>
-    </div>
-    <div class="calc-grid">
-      <div class="calc-inputs">
-        <div class="calc-range-group">
-          <label>Loan Amount (₹) <span id="val-amount">25,00,000</span></label>
-          <input type="range" id="range-amount" min="100000" max="100000000" step="100000" value="2500000" oninput="updateCalc()">
-        </div>
-        <div class="calc-range-group">
-          <label>Interest Rate (% p.a.) <span id="val-rate">7.10</span></label>
-          <input type="range" id="range-rate" min="7.1" max="15" step="0.05" value="7.1" oninput="updateCalc()">
-        </div>
-        <div class="calc-range-group">
-          <label>Tenure (Years) <span id="val-tenure">20</span></label>
-          <input type="range" id="range-tenure" min="1" max="30" step="1" value="20" oninput="updateCalc()">
-        </div>
-      </div>
-      <div class="calc-result">
-        <p style="font-size: 0.9rem; color: var(--gray-600);">Your Monthly EMI</p>
-        <div class="emi-amount">₹<span id="emi-val">19,537</span></div>
-        <p style="font-size: 0.8rem; color: var(--gray-400); margin-bottom: 20px;">*Indicative amount. Final terms depend on lender policies.</p>
-        <button class="btn btn-primary" onclick="openModal('Home Loan')">Apply Now for 7.10%</button>
-      </div>
-    </div>
+<section class="services">
+  <div class="loan-content">
+    <h2 class="section-title">A Home Worth Planning For</h2>
+    <p>A home is more than a property — it is a lifelong investment, a sense of security, and a milestone worth planning well. With Integral Loans, you get premium loan assistance tailored to your financial profile, helping you choose the right home loan solution with ease.</p>
+    <p>Whether you are buying your first home, upgrading to a bigger space, or investing in a property, our experienced team guides you through every stage of the process — from eligibility check to final disbursement.</p>
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="why-us">
   <div class="text-center">
-    <span class="section-tag">Benefits</span>
-    <h2 class="section-title">A Smarter Way to Apply for a Home Loan</h2>
-    <p class="section-sub">We combine financial expertise with personalized service to help you make informed decisions.</p>
+    <h2 class="section-title">Why Choose Integral Loans</h2>
+    <p class="section-sub">Experience a Smarter Way to Apply for a Home Loan</p>
   </div>
-  <div class="lp-features">
-    <div class="lp-feature-card">
-      <h4>7.10% p.a. Onwards</h4>
-      <p>Access competitive interest rates from top nationalized and private banks.</p>
-    </div>
-    <div class="lp-feature-card">
-      <h4>Fast Processing</h4>
-      <p>We reduce delays through organized application handling and proactive follow-ups.</p>
-    </div>
-    <div class="lp-feature-card">
-      <h4>16+ Years Experience</h4>
-      <p>Deep foundational knowledge of how lending institutions operate from the inside out.</p>
-    </div>
-    <div class="lp-feature-card">
-      <h4>Zero Confusion</h4>
-      <p>Transparent communication with no hidden surprises — just honest, clear guidance.</p>
-    </div>
+  <div class="loan-content">
+    <p>At Integral Loans, we combine financial expertise with personalized service to help you make informed decisions.</p>
+    <ul>
+      <li>Home loan assistance starting at 7.10% p.a.</li>
+      <li>Personalized support for every client</li>
+      <li>Transparent guidance at every step</li>
+      <li>Assistance with documentation and application submission</li>
+      <li>Strong coordination with lending partners</li>
+      <li>Support focused on faster processing</li>
+      <li>A client-first approach that prioritizes your best interests</li>
+    </ul>
+    <h3 class="section-title" style="font-size:1.4rem;margin-top:32px;">A Smarter Way to Choose the Right Lender</h3>
+    <p>Every bank and NBFC has its own policies, product features, and approval criteria. At Integral Loans, we bring 16+ years of experience and deep market knowledge to help our clients choose the most suitable lender with ease. Our network across major nationalised and private banks, along with NBFCs, allows us to offer the right guidance at the right time.</p>
   </div>
 </section>
 
-<!-- DOCUMENTATION -->
-<section style="background: var(--off-white);">
+<section class="services" id="emi-calculator">
   <div class="text-center">
-    <span class="section-tag">Checklist</span>
-    <h2 class="section-title">Documents Usually Required</h2>
-    <p class="section-sub">Keep these ready for a smoother application process.</p>
+    <h2 class="section-title">Estimate Your Monthly EMI Instantly</h2>
+    <p class="section-sub">Planning your home loan becomes easier when you know what to expect.</p>
   </div>
-  <div class="docs-list">
-    <div class="docs-category">
-      <h4>Identity & Address</h4>
-      <ul>
-        <li>PAN Card & Aadhaar Card</li>
-        <li>Passport / Voter ID</li>
-        <li>Driving License</li>
-      </ul>
+  <div class="emi-box">
+    <p style="text-align:center;margin-bottom:20px;color:var(--gray-600);">Enter your details and get an instant EMI estimate. Starting rate: <strong>7.10% p.a.</strong> (up to 13% p.a. depending on profile and property).</p>
+    <div class="form-group">
+      <label for="emi-amount">Loan Amount (₹)</label>
+      <input type="number" id="emi-amount" value="2500000" min="100000" step="100000"/>
     </div>
-    <div class="docs-category">
-      <h4>Income Proof</h4>
-      <ul>
-        <li>Salary Slips (Last 3 Months)</li>
-        <li>Bank Statements (Last 6 Months)</li>
-        <li>Form 16 & ITR</li>
-        <li>Business Financials (if applicable)</li>
-      </ul>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="emi-rate">Interest Rate (% p.a.)</label>
+        <input type="number" id="emi-rate" value="7.10" min="1" max="20" step="0.1"/>
+      </div>
+      <div class="form-group">
+        <label for="emi-tenure">Tenure (Years)</label>
+        <input type="number" id="emi-tenure" value="20" min="1" max="30"/>
+      </div>
     </div>
-    <div class="docs-category">
-      <h4>Property Docs</h4>
-      <ul>
-        <li>Agreement to Sale</li>
-        <li>Approved Plan Copy</li>
-        <li>NOC from Builder/Society</li>
-        <li>Property Chain Documents</li>
-      </ul>
+    <button type="button" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="calculateHomeEMI()">Calculate EMI</button>
+    <div class="emi-result" id="emiResult">
+      <span>Estimated Monthly EMI</span>
+      <strong id="emiValue">—</strong>
     </div>
+    <p class="emi-note">EMI shown is indicative. Final EMI depends on loan amount, tenure, interest rate, and lender terms.</p>
+    <button type="button" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px;" onclick="openModal('Home Loan')">Apply Now</button>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<section class="why-us">
+  <div class="text-center">
+    <h2 class="section-title">Home Loan Designed for Comfort and Confidence</h2>
+  </div>
+  <div class="highlight-grid" style="max-width:1000px;margin:0 auto;padding:0 5%;">
+    <div class="highlight-card"><h4>Competitive Interest Rates</h4><p>Get started with rates beginning at 7.10% p.a. and explore loan options that match your profile.</p></div>
+    <div class="highlight-card"><h4>Flexible Repayment Options</h4><p>Choose a tenure that works for your monthly budget and long-term financial plan.</p></div>
+    <div class="highlight-card"><h4>Personalized Loan Assistance</h4><p>Our team works closely with you to simplify the process and improve your loan journey.</p></div>
+    <div class="highlight-card"><h4>Fast and Efficient Support</h4><p>We help reduce delays through organized application handling and proactive follow-ups.</p></div>
+    <div class="highlight-card"><h4>Transparent Communication</h4><p>No confusion, no hidden surprises — just honest, clear guidance.</p></div>
+  </div>
+</section>
+
+<section class="services">
+  <div class="loan-content">
+    <h2 class="section-title">Who Can Apply for a Home Loan?</h2>
+    <p>Home loan eligibility may vary depending on the lender, but generally, applicants may include:</p>
+    <ul>
+      <li>Salaried professionals</li>
+      <li>Self-employed individuals</li>
+      <li>Business owners</li>
+      <li>First-time homebuyers</li>
+      <li>Property buyers looking to purchase under construction or ready property</li>
+    </ul>
+    <p><strong>Common factors considered:</strong> Age, Income, Credit profile, Employment stability, Existing obligations, Property details.</p>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="text-center">
+    <h2 class="section-title">Documents Usually Required</h2>
+  </div>
+  <div class="doc-grid" style="max-width:1000px;margin:0 auto;padding:0 5%;">
+    <div class="doc-col"><h4>Identity &amp; Address</h4><ul><li>PAN card</li><li>Aadhaar card</li><li>Passport</li><li>Voter ID</li><li>Driving license</li></ul></div>
+    <div class="doc-col"><h4>Income Proof</h4><ul><li>Salary slips</li><li>Bank statements</li><li>ITR / Form 16</li><li>Business financials</li></ul></div>
+    <div class="doc-col"><h4>Property</h4><ul><li>Agreement to sale</li><li>Property papers</li><li>Approved plan</li><li>NOC &amp; related docs</li></ul></div>
+    <div class="doc-col"><h4>Other</h4><ul><li>Passport-size photos</li><li>Application form</li><li>Lender-specific documents</li></ul></div>
+  </div>
+</section>
+
 <section class="how-we-work">
   <div class="text-center">
-    <span class="section-tag">The Journey</span>
-    <h2 class="section-title">A Simple Process, Guided by Experts</h2>
+    <h2 class="section-title section-title-center">How It Works</h2>
+    <p class="section-sub">A Simple Process, Guided by Experts</p>
   </div>
-  <div class="steps-grid">
-    <div class="step-card">
-      <div class="step-num">1</div>
-      <h4>Share Requirement</h4>
-      <p>Tell us about your property plan and financial profile.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">2</div>
-      <h4>Get Guidance</h4>
-      <p>Identify suitable loan structures and repayment approaches.</p>
-    </div>
-    <div class="step-card">
-      <div class="step-num">3</div>
-      <h4>Sanction & Disbursal</h4>
-      <p>We handle coordination until the loan is disbursed.</p>
-    </div>
+  <div class="steps-linear">
+    <div class="step-card"><div class="step-num">1</div><h4>Share Your Requirement</h4><p>Tell us about your property plan, loan need, and financial profile.</p></div>
+    <div class="step-connector"></div>
+    <div class="step-card"><div class="step-num">2</div><h4>Get the Right Guidance</h4><p>We help you identify a suitable home loan structure and repayment approach.</p></div>
+    <div class="step-connector"></div>
+    <div class="step-card"><div class="step-num">3</div><h4>Submit the Application</h4><p>Our team assists with documentation and ensures your application is prepared correctly.</p></div>
+  </div>
+  <div class="steps-linear" style="margin-top:24px;">
+    <div class="step-card"><div class="step-num">4</div><h4>Bank Coordination</h4><p>We follow up with the lender and help move the process forward efficiently.</p></div>
+    <div class="step-connector"></div>
+    <div class="step-card"><div class="step-num">5</div><h4>Loan Sanction &amp; Disbursement</h4><p>Once approved, we continue guiding you until the loan is disbursed.</p></div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section style="background: var(--white);">
-  <div class="text-center">
-    <span class="section-tag">FAQ</span>
+<section class="services">
+  <div class="loan-content text-center">
+    <h2 class="section-title">Trusted Support for One of Life's Biggest Decisions</h2>
+    <p>Choosing a home loan is not just about interest rates — it is about confidence, timing, and the right support. We aim to make your experience easier, faster, more transparent, more financially comfortable, and more rewarding.</p>
+    <p style="margin-top:20px;"><strong>Serving:</strong> Mumbai, Thane, Navi Mumbai, Vasai Virar, Palghar</p>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="loan-content">
     <h2 class="section-title">Frequently Asked Questions</h2>
-  </div>
-  <div style="max-width: 800px; margin: 40px auto 0;">
-    <div style="margin-bottom: 20px; padding: 20px; background: var(--gray-100); border-radius: 12px;">
-      <h4 style="color: var(--primary); margin-bottom: 8px;">What is the starting interest rate?</h4>
-      <p style="font-size: 0.9rem; color: var(--gray-600);">The starting rate is 7.10% per annum, subject to eligibility and lender terms.</p>
-    </div>
-    <div style="margin-bottom: 20px; padding: 20px; background: var(--gray-100); border-radius: 12px;">
-      <h4 style="color: var(--primary); margin-bottom: 8px;">Do you help with the full process?</h4>
-      <p style="font-size: 0.9rem; color: var(--gray-600);">Yes, we assist with application support, documentation, bank coordination, and follow-up until disbursement.</p>
-    </div>
-    <div style="margin-bottom: 20px; padding: 20px; background: var(--gray-100); border-radius: 12px;">
-      <h4 style="color: var(--primary); margin-bottom: 8px;">Which areas do you serve?</h4>
-      <p style="font-size: 0.9rem; color: var(--gray-600);">We serve Mumbai, Thane, Navi Mumbai, Vasai Virar, and Palghar.</p>
+    <div class="faq-list">
+      <div class="faq-item"><h4>What is the starting interest rate for a home loan?</h4><p>The starting rate is 7.10% per annum, subject to eligibility and lender terms.</p></div>
+      <div class="faq-item"><h4>Can I calculate my EMI before applying?</h4><p>Yes, use the EMI calculator above to estimate your monthly repayment and plan better.</p></div>
+      <div class="faq-item"><h4>What factors affect home loan approval?</h4><p>Income, credit score, property value, repayment capacity, and documentation quality are key factors.</p></div>
+      <div class="faq-item"><h4>Do you help with the full loan process?</h4><p>Yes, we assist with application support, documentation, bank coordination, and follow-up until disbursement.</p></div>
+      <div class="faq-item"><h4>Which areas do you serve?</h4><p>We serve clients in Mumbai, Thane, Navi Mumbai, Vasai Virar, and Palghar.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
-<section style="background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; text-align: center;">
-  <h2 class="section-title" style="color: white;">Make Your Dream Home a Reality</h2>
-  <p style="margin-bottom: 30px; opacity: 0.9;">Start today. Let's build your future, one step at a time.</p>
-  <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-    <button class="btn btn-gold" onclick="openModal('Home Loan')">Speak to an Expert</button>
-    <a href="mailto:info@integralloans.com" class="btn btn-outline" style="border-color: white; color: white;"><i class="fa fa-envelope"></i> Email Us</a>
+<section class="loan-cta-strip">
+  <h2>Make Your Dream Home a Reality</h2>
+  <p>With the right guidance, the right loan, and the right partner, your dream home is within reach. Start today.</p>
+  <div class="loan-cta-btns">
+    <button class="btn btn-primary" onclick="openModal('Home Loan')">Speak to an Expert</button>
+    <a href="#emi-calculator" class="btn btn-outline btn-hero-outline">Check EMI &amp; Eligibility</a>
   </div>
+  <p style="margin-top:24px;font-size:0.95rem;"><a href="mailto:info@integralloans.com" style="color:var(--accent-light)">info@integralloans.com</a> · <a href="tel:+919167331557" style="color:var(--accent-light)">91673 31557</a></p>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-logo"><img src="WhatsApp Image 2026-05-05 at 11.20.59.jpeg" alt="Integral Loans"/></div>
+  <div class="footer-grid">
+    <!-- Col 1: Brand & Bio -->
+    <div class="footer-col footer-about">
+      <img src="final-logo.png" alt="Integral Loans" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <span class="footer-logo-text" style="display:none; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--white); margin-bottom: 16px;">Integral Loans</span>
+      <p class="footer-note">Trusted loan advisors committed to affordable EMIs, transparent service, and faster loan approvals across MMR and Palghar.</p>
+      <div class="footer-contact-info">
+        <p><i class="fa fa-envelope"></i> <a href="mailto:info@integralloans.com">info@integralloans.com</a></p>
+        <p><i class="fa fa-phone"></i> <a href="tel:+919167331557">+91 91673 31557</a></p>
+      </div>
+    </div>
+    
+    <!-- Col 2: Services links -->
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="home-loan.html">Home Loan</a></li>
+        <li><a href="mortgage-loan.html">Mortgage Loan</a></li>
+        <li><a href="sme-loan.html">SME Loan</a></li>
+        <li><a href="personal-loan.html">Personal Loan</a></li>
+        <li><a href="education-loan.html">Education Loan</a></li>
+        <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
+      </ul>
+    </div>
+    
+    <!-- Col 3: Quick Navigation -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#how-we-work">Process</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    
+    <!-- Col 4: Legal & KYC Verification -->
+    <div class="footer-col">
+      <h4>Verification &amp; Legal</h4>
+      <ul>
+        <li><a href="kyc.html">KYC Verification</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 Integral Loans. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- MODAL (Reuse from index) -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <span class="loan-type-badge" id="modalLoanBadge">Home Loan</span>
-      <h2>Apply for Your Loan</h2>
-      <form onsubmit="handleModalSubmit(event)">
-        <div class="form-row">
-          <div class="form-group"><label>Full Name *</label><input type="text" id="m-name" required/></div>
-          <div class="form-group"><label>Mobile *</label><input type="tel" id="m-phone" required/></div>
-        </div>
-        <div class="form-group"><label>Email</label><input type="email" id="m-email"/></div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;">Submit Application</button>
-      </form>
-    </div>
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <span class="loan-type-badge" id="modalLoanBadge">Home Loan</span>
+    <h2>Apply for Your Loan</h2>
+    <p class="modal-subtitle">Our expert will contact you within 24 hours.</p>
+    <form onsubmit="handleModalSubmit(event)">
+      <div class="form-row">
+        <div class="form-group"><label for="m-name">Full Name *</label><input type="text" id="m-name" required/></div>
+        <div class="form-group"><label for="m-phone">Mobile *</label><input type="tel" id="m-phone" required/></div>
+      </div>
+      <div class="form-group"><label for="m-email">Email</label><input type="email" id="m-email"/></div>
+      <div class="form-group"><label for="m-loan">Loan Type</label><select id="m-loan"><option selected>Home Loan</option></select></div>
+      <div class="form-group"><label for="m-amount">Approximate Loan Amount</label><input type="text" id="m-amount" placeholder="e.g. ₹25 Lakhs"/></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa fa-paper-plane"></i> Submit</button>
+    </form>
   </div>
-
-<div id="toast" style="position:fixed;bottom:30px;right:30px;background:#1a3a6b;color:white;padding:16px 24px;border-radius:12px;display:none;z-index:3000;">
-    <span id="toastMsg">Sent!</span>
 </div>
+
+<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;display:none;z-index:3000;font-weight:600;"><i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you!</span></div>
 
 <script src="main.js"></script>
 <script>
-    function updateCalc() {
-        const amount = document.getElementById('range-amount').value;
-        const rate = document.getElementById('range-rate').value;
-        const years = document.getElementById('range-tenure').value;
-
-        document.getElementById('val-amount').textContent = Number(amount).toLocaleString('en-IN');
-        document.getElementById('val-rate').textContent = rate;
-        document.getElementById('val-tenure').textContent = years;
-
-        const r = rate / 12 / 100;
-        const n = years * 12;
-        const emi = (amount * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-
-        document.getElementById('emi-val').textContent = Math.round(emi).toLocaleString('en-IN');
-    }
-    updateCalc();
+function calculateHomeEMI() {
+  const P = parseFloat(document.getElementById('emi-amount').value) || 0;
+  const annualRate = parseFloat(document.getElementById('emi-rate').value) || 7.1;
+  const years = parseFloat(document.getElementById('emi-tenure').value) || 20;
+  const r = annualRate / 12 / 100;
+  const n = years * 12;
+  let emi = 0;
+  if (P > 0 && n > 0) {
+    emi = r === 0 ? P / n : (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+  document.getElementById('emiValue').textContent = '₹ ' + Math.round(emi).toLocaleString('en-IN');
+}
+document.addEventListener('DOMContentLoaded', calculateHomeEMI);
 </script>
 </body>
 </html>

@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral Loans | Instant Loan Assistance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #032b8a;
+            --primary-light: #0d5dd6;
+            --accent-color: #0d5dd6;
+            --accent-hover: #032b8a;
+            --success-color: #2ecc71;
+            --success-dark: #27ae60;
+            --danger-color: #e74c3c;
+            --warning-color: #aebfd1;
+            --text-main: #2d3436;
+            --text-muted: #636e72;
+            --bg-body: #f4f7f6;
+            --bg-card: #ffffff;
+            --border-radius: 12px;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.04);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 12px 25px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            padding: 25px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .navbar h1 {
+            display: none;
+        }
+
+        .main-logo {
+            max-width: 160px;
+            height: auto;
+            margin-bottom: 15px;
+            display: inline-block;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+            transition: var(--transition);
+        }
+
+        .navbar p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-header {
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(3, 43, 138, 0.08);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.03);
+            height: 100%;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card h3 i {
+            font-size: 1.5rem;
+        }
+
+        .card-success h3 i { color: var(--success-color); }
+        .card-danger h3 i { color: var(--danger-color); }
+        .card-warning h3 i { color: var(--accent-color); }
+        .card-info h3 i { color: var(--primary-light); }
+
+        ul.feature-list {
+            list-style: none;
+        }
+
+        ul.feature-list li {
+            position: relative;
+            padding-left: 32px;
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        ul.feature-list li b {
+            color: var(--text-main);
+        }
+
+        ul.feature-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: var(--success-color);
+            font-size: 1rem;
+        }
+
+        ul.feature-list.danger-list li::before {
+            content: "\f00d";
+            color: var(--danger-color);
+        }
+
+        ul.feature-list.info-list li::before {
+            content: "\f054";
+            color: var(--primary-light);
+            font-size: 0.8rem;
+            top: 4px;
+        }
+
+        .alert-box {
+            padding: 15px 18px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .alert-success { background: rgba(46, 204, 113, 0.1); color: var(--success-dark); border: 1px solid rgba(46, 204, 113, 0.2); }
+        .alert-danger { background: rgba(231, 76, 60, 0.1); color: var(--danger-color); border: 1px solid rgba(231, 76, 60, 0.2); }
+
+        /* Partners Section */
+        .partners-wrapper {
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            padding: 35px 30px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+        
+        .partners-wrapper:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .partner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .partner-card {
+            background: var(--bg-body);
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        .partner-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+            background: #fff;
+        }
+        
+        .partner-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .partner-logo {
+            width: 70px;
+            height: 70px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            transition: var(--transition);
+            overflow: hidden;
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-logo {
+            box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+        }
+        
+        .partner-card:hover .partner-logo img {
+            transform: scale(1.08);
+        }
+
+        .partner-name {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
+
+        .partner-desc {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            width: 100%;
+            gap: 8px;
+        }
+
+        .btn-apply {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .btn-apply:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 6px 15px rgba(13, 93, 214, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1EBE5D;
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .contact-card {
+            background: var(--primary-color);
+            color: #fff;
+            border-radius: var(--border-radius);
+            padding: 45px 40px;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-card::after {
+            content: '\f086';
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: -20px;
+            bottom: -30px;
+            font-size: 12rem;
+            color: rgba(255,255,255,0.03);
+            transform: rotate(-15deg);
+        }
+
+        .contact-card h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .info-item .icon-wrapper {
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        .info-item div p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1rem;
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        
+        .info-item div strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #fff;
+            font-size: 1.1rem;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .info-item a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .info-item a:hover {
+            color: var(--accent-color);
+        }
+
+        .action-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            background: var(--bg-card);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .action-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+        
+        .action-card p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 20px 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-top: 50px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+        
+        .footer strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Floating WhatsApp */
+        .float-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: #fff;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1) rotate(-5deg);
+            background: #1EBE5D;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Badges for required and instructions */
+        .instruction-box {
+            background: rgba(13, 93, 214, 0.05);
+            border-left: 4px solid var(--accent-color);
+            padding: 18px 22px;
+            margin-bottom: 22px;
+            border-radius: 0 8px 8px 0;
+            transition: var(--transition);
+        }
+        
+        .instruction-box:hover {
+            background: rgba(13, 93, 214, 0.08);
+        }
+        
+        .instruction-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .instruction-box ul {
+            padding-left: 20px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        @media(max-width: 900px) {
+            .grid-2, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .partners-wrapper { padding: 20px 15px; margin-bottom: 25px; }
+            .container { padding: 20px 15px; }
+        }
+
+        @media(max-width: 600px) {
+            .navbar { padding: 20px 0; }
+            .main-logo { max-width: 120px; }
+            .navbar p { font-size: 0.95rem; }
+            
+            .section-header { font-size: 1.3rem; margin-bottom: 15px; }
+            
+            .card { padding: 20px; }
+            .card h3 { font-size: 1.1rem; }
+            
+            .partner-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; }
+            .partner-card { padding: 20px 10px; }
+            .partner-logo { width: 45px; height: 45px; font-size: 1.1rem; margin-bottom: 8px; }
+            .partner-name { font-size: 1rem; }
+            .partner-desc { font-size: 0.8rem; margin-bottom: 15px; }
+            .btn { padding: 10px 12px; font-size: 0.85rem; width: 100%; white-space: nowrap; }
+            
+            .contact-card { padding: 25px 20px; }
+            .contact-card h2 { font-size: 1.4rem; margin-bottom: 20px; }
+            
+            .info-item { gap: 12px; }
+            .info-item .icon-wrapper { width: 35px; height: 35px; font-size: 0.8rem; }
+            .info-item div strong { font-size: 1rem; margin-bottom: 2px; }
+            .info-item div p { font-size: 0.9rem; margin-bottom: 2px; }
+            
+            .action-card { padding: 25px 20px; }
+            .action-card h3 { font-size: 1.3rem; }
+            .action-card p { font-size: 0.95rem; }
+            
+            .instruction-box { padding: 15px; }
+            .instruction-box h4 { font-size: 1rem; }
+            .instruction-box ul { font-size: 0.9rem; }
+            
+            ul.feature-list li { font-size: 0.9rem; margin-bottom: 10px; }
+            .alert-box { font-size: 0.85rem; padding: 12px 15px; }
+
+            .dsa-section { padding: 25px 15px !important; }
+            .dsa-section h2 { font-size: 1.6rem !important; }
+            .dsa-section h3 { font-size: 1.1rem !important; }
+            .dsa-section p { font-size: 0.95rem !important; }
+            .dsa-section .dsa-btn { padding: 14px 15px !important; font-size: 1rem !important; width: 100% !important; box-sizing: border-box !important; white-space: normal !important; text-align: center !important; }
+            
+            .float-btn { width: 50px; height: 50px; font-size: 24px; bottom: 15px; right: 15px; }
+        }
+        
+        @media(max-width: 480px) {
+           .partner-grid { grid-template-columns: 1fr; }
+           .action-card .btn { font-size: 1rem; }
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal {
+            background: #fff;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 12px;
+            padding: 35px 30px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            transform: translateY(20px) scale(0.95);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            width: 30px; height: 30px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: rgba(0,0,0,0.05);
+            color: var(--danger-color);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        
+        .modal-header h2 {
+            font-size: 1.7rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .modal-header p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            color: var(--text-main);
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(3, 43, 138, 0.1);
+        }
+        
+        .form-control::placeholder {
+            color: #aaa;
+        }
+
+        .btn-submit {
+            background: var(--primary-color);
+            color: white;
+            padding: 15px;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+        }
+        
+        .btn-submit:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Success Message styling */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 15px 0;
+        }
+        
+        .success-state i {
+            font-size: 4rem;
+            color: var(--success-color);
+            margin-bottom: 15px;
+        }
+
+        .success-state h3 {
+            color: var(--success-dark);
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .success-state p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Translate Widget styling adjustments */
+        #google_translate_element {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 5px;
+        }
+        .goog-te-combo {
+            padding: 8px 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 6px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .goog-logo-link {
+            display: none !important;
+        }
+        .goog-te-gadget {
+            color: transparent !important;
+            font-size: 0;
+        }
+        .goog-te-banner-frame.skiptranslate {
+            display: none !important;
+        }
+        body {
+            top: 0px !important;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar" style="position: relative; padding: 35px 0;">
+        <!-- Language Switcher -->
+        <div id="google_translate_element" style="position: absolute; right: 20px; top: 15px;"></div>
+        
+        <div class="container" style="padding: 10px 20px 20px; max-width: 900px; text-align: center;">
+            <img src="final-logo.png" alt="Integral Loans Logo" class="main-logo">
+            <h1>Integral Loans</h1>
+            
+            <h2 style="color: #fff; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 12px; line-height: 1.2;">Instant Loan Assistance Made Simple</h2>
+            <p style="color: rgba(255, 255, 255, 0.95); font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; margin-bottom: 25px; max-width: 700px; margin-left: auto; margin-right: auto;">Get fast approvals with secure KYC verification & minimal documentation.</p>
+            
+            <!-- Trust Line -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: 35px; font-size: 0.95rem; font-weight: 500; color: #fff;">
+                <span style="background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--success-color); margin-right: 6px;"></i> 100% Digital Process</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--success-color); margin-right: 6px;"></i> Quick Verification</span>
+                <span style="background: rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.15);"><i class="fa-solid fa-check-circle" style="color: var(--success-color); margin-right: 6px;"></i> Trusted Loan Assistance</span>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="#partners-section" class="btn btn-apply" style="width: auto; padding: 16px 32px; font-size: 1.1rem; border-radius: 8px; box-shadow: 0 8px 20px rgba(13, 93, 214, 0.4);"><i class="fa-solid fa-clipboard-check"></i> Check Eligibility Now</a>
+                <a href="#partners-section" class="btn" style="width: auto; padding: 16px 32px; font-size: 1.1rem; border-radius: 8px; background: #2ecc71; color: #fff; box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4); border: none; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-shield-halved"></i> Apply Securely</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="partners-section">
+        
+        <!-- Partners Sections -->
+        
+        <div class="partners-wrapper">
+            <h2 class="section-header">Credit Cards & EMI Cards</h2>
+            <div class="partner-grid">
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/SBI.png" alt="SBI Logo" onerror="this.src='https://ui-avatars.com/api/?name=SBI&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">SBI</div>
+                    <div class="partner-desc">SBI Card</div>
+                    <a href="https://www.sbicard.com/sprint/c/simplyClick?ch=dis&GEMID1=dis_smart_SimplyClick_conversion_April25_eapply_Banner_static_rrtcs_bkfinanciealservices&GEMID2=Buddyloan" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/hdfc-2.png" alt="HDFC Logo" onerror="this.src='https://ui-avatars.com/api/?name=HDFC&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">HDFC</div>
+                    <div class="partner-desc">HDFC Card</div>
+                    <a href="https://applyonline.hdfcbank.com/cards/credit-cards.html?Channel=DSA&DSACode=XVEF&SMCode=N12369&LGCode=DGPI&LCCode=rrtcs_bkfinanciealservices&LC2=VEF001#nbb" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/IDFC-FIRST.png" alt="IDFC Logo" onerror="this.src='https://ui-avatars.com/api/?name=IDFC&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">IDFC</div>
+                    <div class="partner-desc">IDFC Card</div>
+                    <a href="https://api.credilio.in/public/cc/lead/org-utm-link/store/1760610522949408?utm-source=rrtcs_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/kotak.com" alt="Kotak Logo" onerror="this.src='https://ui-avatars.com/api/?name=Kotak&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Kotak</div>
+                    <div class="partner-desc">Kotak Card</div>
+                    <a href="https://api.credilio.in/public/cc/lead/org-utm-link/store/1760610527488150?utm-source=rrtcs_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/yesbank.in" alt="YesBank Logo" onerror="this.src='https://ui-avatars.com/api/?name=YesBank&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">YesBank</div>
+                    <div class="partner-desc">Credit Card</div>
+                    <a href="https://api.credilio.in/public/cc/lead/org-utm-link/store/1760610531737909?utm-source=rrtcs_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/stablemoney.in" alt="StableMoney Logo" onerror="this.src='https://ui-avatars.com/api/?name=SM&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">StableMoney</div>
+                    <div class="partner-desc">FD Card</div>
+                    <a href="https://s1.whistleloop.com/?linkid=50214&offerid=847&publisher_id=3727&parentid=9&pub_name=Pratik&sub_id1=rrtcs_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/bajajfinserv.in" alt="Bajaj Logo" onerror="this.src='https://ui-avatars.com/api/?name=Bajaj&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Bajaj Finserv</div>
+                    <div class="partner-desc">Insta EMI</div>
+                    <a href="https://www.bajajfinserv.in/webform/emicard/login?utm_source=expartner&utm_medium=DSA&utm_campaign=rrtcs_bkfinanciealservices&clickid=%7Bclick_id%7D" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="partners-wrapper">
+            <h2 class="section-header">Personal Loan Partners</h2>
+            <div class="partner-grid">
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/incred.logo.svg" alt="InCred Logo" onerror="this.src='https://ui-avatars.com/api/?name=InCred&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">InCred</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://www.incred.com/personal-loan/?partnerId=8313827854371024P&utm_source=DSA&utm_medium=rrtrustcapitalsolution_bkfinanciealservices&utm_campaign=Buddyloan" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/moneyview.in" alt="MoneyView Logo" onerror="this.src='https://ui-avatars.com/api/?name=MV&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">MoneyView</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://moneyview.in/personal-loan?utm_source=bl&utm_medium=rrtrustcapitalsolution_bkfinanciealservices&utm_campaign=dsa" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/kissht.com" alt="Kissht Logo" onerror="this.src='https://ui-avatars.com/api/?name=K&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Kissht</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://kissht.onelink.me/I5a1?af_xp=custom&pid=Buddyloan01&c=Buddyloan01&is_retargeting=true&af_reengagement_window=3d&af_sub1=rrtrustcapitalsolution_bkfinanciealservices&af_click_lookback=30d" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/Hero-housing-finance.png" alt="Hero FinCorp Logo" onerror="this.src='https://ui-avatars.com/api/?name=HF&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Hero FinCorp</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://hipl.onelink.me/S7fO?af_xp=custom&pid=partnership_BDL&is_retargeting=true&af_reengagement_window=30d&c=Buddyloan_rdf_26&utm_source=partnership_BDL&utm_campaign=Buddyloan_rdf_26&utm_content=rrtrustcapitalsolution_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/poonawallafincorp.com" alt="Poonawalla Logo" onerror="this.src='https://ui-avatars.com/api/?name=PF&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Poonawalla</div>
+                    <div class="partner-desc">STPL Loan</div>
+                    <a href="https://instant-pocket-loan.poonawallafincorp.com/?utm_DSA_Code=PKA00192&UTM_Partner_Name=BVALUE&UTM_Partner_Medium=DIGITAL_BL_rrtrustcapitalsolution_bkfinanciealservices&UTM_Partner_AgentCode=PFLBVALUE&UTM_Partner_ReferenceID=BVALUEPFL00000001_rrtrustcapitalsolution_dsa" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/theunitybank.com" alt="Unity Logo" onerror="this.src='https://ui-avatars.com/api/?name=Unity&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Unity Bank</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://loans.theunitybank.com/unity-pl-ui/page/exclusion/login/logindetails?utm_source=buddyloan&utm_medium=rrtrustcapitalsolution_bkfinanciealservices&utm_campaign=DSA" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/indusind.com" alt="IndusInd Logo" onerror="this.src='https://ui-avatars.com/api/?name=IndusInd&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">IndusInd</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://induseasycredit.indusind.com/customer/personal-loan/new-lead?utm_code=z_mktgcamp&utm_campaign=ind_PL&utm_source=buddyloan&utm_medium=rrtrustcapitalsolution_bkfinanciealservices&utm_content=DSA" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/smartcoin.co.in" alt="SmartCoin Logo" onerror="this.src='https://ui-avatars.com/api/?name=SmartCoin&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">SmartCoin</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://app.olyv.co.in/?utm_source=buddyloan&utm_campaign=Buddyloan_link4&exit_id=rrtrustcapitalsolution_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/fibe.in" alt="Fibe Logo" onerror="this.src='https://ui-avatars.com/api/?name=Fibe&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Fibe</div>
+                    <div class="partner-desc">EarlySalary Loan</div>
+                    <a href="https://webportal.fibe.in/easy-loan?utm_source=BUDDYLOANPA&utm_medium=rrtrustcapitalsolution_bkfinanciealservices&campaignid=dsa" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/prefr.com" alt="Prefer Logo" onerror="this.src='https://ui-avatars.com/api/?name=Prefer&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Prefer Loans</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://marketplace.prefr.com/buddyloan?utm_source=buddyloan&utm_medium=rrtrustcapitalsolution_bkfinanciealservices&utm_content=content1&utm_campaign=DSA" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/payrupik.in" alt="PayRupik Logo" onerror="this.src='https://ui-avatars.com/api/?name=PayRupik&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">PayRupik</div>
+                    <div class="partner-desc">Personal Loan</div>
+                    <a href="https://app.adjust.com/1sflo7sv?campaign=%7Brrtrustcapitalsolution_bkfinanciealservices%7D&adgroup=%7Bbuddy_loan01%7D&creative=%7BBDL_dsa%7D&idfa=%7Baf_9%7D&click_id=%7Bclick_id%7D&gps_adid=%7Baf_9%7D&android_id=%7Baf_6%7D&ip_address=%7Baf_5%7D&impression_id=%7Baf_7%7D&install_callback=https%3A%2F%2Futils.follow.whistle.mobi%2Fpixel.php%3Flinkid%3D%7Bclick_id%7D" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="partners-wrapper">
+            <h2 class="section-header">Business Loans</h2>
+            <div class="partner-grid">
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/flexiloans.com" alt="FlexiLoans Logo" onerror="this.src='https://ui-avatars.com/api/?name=FL&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">FlexiLoans</div>
+                    <div class="partner-desc">Business Loan</div>
+                    <a href="https://loans.flexiloans.com/?nlp=1&partnerCode=64f1be98nfwae&utm_source=partner&utm_medium=buddyloan&utm_campaign=rrtrustcapitalsolution_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/protium.Logo-2363x1182-01.png" alt="Protium Logo" onerror="this.src='https://ui-avatars.com/api/?name=P&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Protium</div>
+                    <div class="partner-desc">Business Loan</div>
+                    <a href="https://dbl.protium.co.in/?utm_source=buddyloans&utm_medium=standard&utm_campaign=rrtrustcapitalsolution_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/indifi new logo.png" alt="Indifi Logo" onerror="this.src='https://ui-avatars.com/api/?name=I&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Indifi</div>
+                    <div class="partner-desc">Business Loan</div>
+                    <a href="https://www.indifi.com/msme-loans?utm_source=Affiliate&utm_medium=Aff_054Web&utm_campaign=rrtrustcapitalsolution_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="banks logo/POONAWALLA-FINCORP.png" alt="Poonawalla Logo" onerror="this.src='https://ui-avatars.com/api/?name=PF&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Poonawalla</div>
+                    <div class="partner-desc">Business Loan</div>
+                    <a href="https://business-loans.poonawallafincorp.com/?redirectto=primebl&utm_DSA_Code=PKA00192&UTM_Partner_Name=BVALUE_SERVICES_PRIVATE_LIMITED&UTM_Partner_ReferenceID=rrtcs_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo"><img src="https://logo.clearbit.com/muthootfincorp.com" alt="Muthoot Logo" onerror="this.src='https://ui-avatars.com/api/?name=Muthoot&background=0c3b5e&color=fff'"></div>
+                    <div class="partner-name">Muthoot FinCorp</div>
+                    <div class="partner-desc">EDI Business Loan</div>
+                    <a href="https://creditlink.finbox.in/?partnerCode=LS_NUSHZC&agentCode=sc113356&productType=business_loan_edi&agentId=rrtcs_bkfinanciealservices" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Guidelines Grid -->
+        <div class="grid-2">
+            <div class="card card-success">
+                <h3><i class="fa-solid fa-circle-check"></i> Who Can Apply</h3>
+                <ul class="feature-list">
+                    <li>Minimum <b>CIBIL Score: 730+</b></li>
+                    <li>Aadhaar & PAN must be linked</li>
+                    <li>Mobile number linked with Aadhaar</li>
+                    <li>Smartphone with internet access</li>
+                    <li>Active bank account in applicant name</li>
+                </ul>
+                <div class="alert-box alert-success">
+                    <i class="fa-solid fa-circle-info"></i> All requirements are compulsory.
+                </div>
+            </div>
+
+            <div class="card card-danger">
+                <h3><i class="fa-solid fa-circle-xmark"></i> Who Should NOT Apply</h3>
+                <ul class="feature-list danger-list">
+                    <li>CIBIL below 730</li>
+                    <li>Aadhaar not linked with PAN</li>
+                    <li>No Aadhaar linked mobile</li>
+                    <li>No smartphone access</li>
+                    <li>No active bank account</li>
+                </ul>
+                <div class="alert-box alert-danger">
+                    <i class="fa-solid fa-triangle-exclamation"></i> Low CIBIL applicants should avoid applying.
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card card-warning">
+                <h3><i class="fa-solid fa-clipboard-list"></i> Important Instructions</h3>
+                
+                <div class="instruction-box">
+                    <h4><i class="fa-solid fa-mobile-screen"></i> Device Requirement</h4>
+                    <ul style="list-style: disc; padding-left: 25px;">
+                        <li>Applicant must use their own smartphone.</li>
+                        <li>Loan link must be opened from applicant's phone.</li>
+                    </ul>
+                </div>
+                
+                <div class="instruction-box">
+                    <h4><i class="fa-solid fa-wallet"></i> Income Declaration</h4>
+                    <ul style="list-style: disc; padding-left: 25px;">
+                        <li>Enter monthly income above <b>₹65,000</b></li>
+                        <li>Select <b>online income</b></li>
+                        <li>Do NOT select cash or cheque income</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card card-info">
+                <h3><i class="fa-solid fa-bolt"></i> Approval & Disbursal</h3>
+                <ul class="feature-list info-list" style="margin-top: 25px; display: flex; flex-direction: column; gap: 8px;">
+                    <li>Approval in <b>~10 minutes</b></li>
+                    <li>Digital agreement required</li>
+                    <li>Amount credited within <b>10 minutes</b> after agreement</li>
+                </ul>
+                <div style="margin-top: 40px; text-align: center; padding: 20px; background: rgba(3, 43, 138, 0.03); border-radius: 12px;">
+                    <i class="fa-solid fa-money-bill-transfer" style="font-size: 3.5rem; color: var(--primary-light); opacity: 0.9;"></i>
+                    <p style="margin-top: 15px; font-weight: 600; color: var(--primary-color);">Fast & Secure Processing</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DSA Partner Section -->
+        <div class="dsa-section" style="background: linear-gradient(135deg, #0c3b5e 0%, #1a5276 100%); border-radius: 12px; padding: 40px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; color: #aebfd1;">🤝 Become a Loan DSA Partner</h2>
+                <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 15px; color: #ffffff;">Grow Your Income with Integral Loans</h3>
+                <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.6; color: rgba(255,255,255,0.95);">Join our growing network and earn attractive commissions by helping customers get loans from trusted banks & NBFCs.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-bottom: 30px;">
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #aebfd1; font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;"><i class="fa-solid fa-star"></i> Why Join Us</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.95rem; color: #fff;">
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>High Commission Payouts</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Work from Anywhere</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Multiple Bank & NBFC Tie-ups</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Fast Approval Support</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Dedicated Processing Team</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Training & Partner Support</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #aebfd1; font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;"><i class="fa-solid fa-users"></i> Who Can Join</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.95rem; color: #fff;">
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Loan Agents & DSAs</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Insurance Advisors</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Real Estate Agents</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Freelancers & Consultants</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Anyone looking for extra income</li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #aebfd1; font-size: 1.2rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;"><i class="fa-solid fa-chart-line"></i> Earning Potential</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.95rem; margin-bottom: 20px; color: #fff;">
+                        <li><i class="fa-solid fa-coins" style="color:#aebfd1; margin-right:8px;"></i>Earn per file commission</li>
+                        <li><i class="fa-solid fa-coins" style="color:#aebfd1; margin-right:8px;"></i>Monthly recurring income</li>
+                        <li><i class="fa-solid fa-coins" style="color:#aebfd1; margin-right:8px;"></i>Unlimited earning opportunity</li>
+                    </ul>
+                    <h4 style="color: #aebfd1; font-size: 1.1rem; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 5px;"><i class="fa-regular fa-file-lines"></i> Required Documents</h4>
+                    <ul style="list-style: none; padding: 0; line-height: 1.8; font-size: 0.9rem; color: #fff;">
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Aadhaar & PAN Card</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Bank Details</li>
+                        <li><i class="fa-solid fa-check" style="color:#2ecc71; margin-right:8px;"></i>Basic Profile Info</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-bottom: 25px;">
+                <p style="font-size: 1.3rem; font-weight: 700; color: #aebfd1; margin-bottom: 10px; font-style: italic;">"Aap customers laiye, processing hum karenge."</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 15px; font-size: 0.95rem;">
+                    <span style="background: #27ae60; padding: 6px 15px; border-radius: 20px;"><i class="fa-solid fa-check"></i> Zero joining fee</span>
+                    <span style="background: #27ae60; padding: 6px 15px; border-radius: 20px;"><i class="fa-solid fa-check"></i> Instant onboarding support</span>
+                    <span style="background: #27ae60; padding: 6px 15px; border-radius: 20px;"><i class="fa-solid fa-check"></i> Payout transparency</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; width: 100%;">
+                <a href="https://wa.me/917284038028?text=I%20want%20to%20join%20as%20a%20DSA%20Partner%20with%20RR%20Trust" target="_blank" class="btn dsa-btn" style="background: #aebfd1; color: #000; font-weight: 700; padding: 16px 35px; font-size: 1.2rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(174, 191, 209, 0.4); text-decoration: none; display: inline-flex; justify-content: center; align-items: center; max-width: 100%;">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.4rem; margin-right: 8px;"></i> <span style="white-space: pre-wrap">Join Now & Start Earning</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h2>Need Assistance?</h2>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="icon-wrapper"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <strong>Call / WhatsApp</strong>
+                            <p>+91 72840 38028</p>
+                            <p>+91 76987 66196</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-wrapper"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <strong>Email</strong>
+                            <p><a href="mailto:info@integralloans.com">info@integralloans.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-wrapper"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <strong>Office</strong>
+                            <p>Office no 207, Somnath Heights<br>
+                            Marketing Yard Same, Chitra<br>
+                            Bhavnagar – 364004</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-wrapper"><i class="fa-solid fa-globe"></i></div>
+                        <div>
+                            <strong>Website</strong>
+                            <p><a href="https://index.html" target="_blank">index.html</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-card">
+                <h3>Ready to get started?</h3>
+                <p>Apply now or reach out to our team on WhatsApp for instant support.</p>
+                <button class="btn btn-apply apply-trigger" style="padding: 18px; font-size: 1.1rem; margin-bottom: 15px; margin-top: 10px; border:none; width: 100%; cursor: pointer;">
+                    <i class="fa-solid fa-paper-plane"></i> APPLY FOR LOAN
+                </button>
+                <a href="https://wa.me/917284038028?text=Hello%20I%20want%20more%20info%20about%20" class="btn btn-whatsapp" style="padding: 18px; font-size: 1.1rem;">
+                    <i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-size: 1.2rem;"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Integral Loans</strong> • Fast Approval • Secure Process</p>
+            <p style="margin-top: 8px;">Approval subject to lender policies & verification.</p>
+        </div>
+
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div style="position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 15px; z-index: 1000;">
+        <a href="tel:+917284038028" class="float-btn" style="position: relative; right: 0; bottom: 0; background: #0d5dd6; width: 60px; height: 60px; font-size: 26px; box-shadow: 0 6px 20px rgba(13, 93, 214, 0.4);" aria-label="Call Us">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+        <a href="https://wa.me/917284038028?text=Hello%20I%20want%20more%20info%20about%20" class="float-btn" style="position: relative; right: 0; bottom: 0; width: 60px; height: 60px; font-size: 30px;" aria-label="WhatsApp Chat">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Application Modal -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal">
+            <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div id="form-content">
+                <div class="modal-header">
+                    <h2>Eligibility Check</h2>
+                    <p>CIBIL 730+ & Aadhaar linked mobile required</p>
+                </div>
+                
+                <form id="applyForm">
+                    <input type="hidden" name="Service" id="selectedService" value="General Loan Inquiry">
+                    
+                    <div class="form-group">
+                        <input type="text" name="Name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="tel" name="Mobile" class="form-control" placeholder="Mobile Number" pattern="[0-9]{10}" title="Please enter valid 10 digit mobile number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select name="Reason" class="form-control" required style="cursor: pointer;">
+                            <option value="" disabled selected>Select Reason to Contact</option>
+                            <option value="Personal Loan">Personal Loan</option>
+                            <option value="Business Loan">Business Loan</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top: 25px;">
+                        <button type="button" class="btn" style="background:#f4f7f6; color:#666; border:1px solid #ddd;" id="cancelBtn">Cancel</button>
+                        <button type="submit" class="btn btn-submit" id="submitBtn">Continue</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="success-content" class="success-state">
+                <i class="fa-solid fa-circle-check"></i>
+                <h3>Thank You!</h3>
+                <p>Your details have been submitted successfully.<br>Our team will contact you shortly.</p>
+                <button class="btn btn-submit" style="margin-top: 25px; width: auto; padding: 12px 30px;" onclick="closeModalFunc()">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for Modal & Form Submit -->
+    <script>
+        const modal = document.getElementById('applyModal');
+        const closeModalBtn = document.getElementById('closeModal');
+        const cancelBtn = document.getElementById('cancelBtn');
+        const applyTriggers = document.querySelectorAll('.apply-trigger');
+        const form = document.getElementById('applyForm');
+        const serviceInput = document.getElementById('selectedService');
+        const formContent = document.getElementById('form-content');
+        const successContent = document.getElementById('success-content');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function openModal(serviceName) {
+            serviceInput.value = serviceName || "General Loan Inquiry";
+            form.reset();
+            formContent.style.display = 'block';
+            successContent.style.display = 'none';
+            modal.classList.add('active');
+        }
+
+        function closeModalFunc() {
+            modal.classList.remove('active');
+        }
+
+        applyTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceName = trigger.getAttribute('data-service');
+                openModal(serviceName);
+            });
+        });
+
+        closeModalBtn.addEventListener('click', closeModalFunc);
+        cancelBtn.addEventListener('click', closeModalFunc);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModalFunc();
+            }
+        });
+
+        // AJAX Form Submit
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            submitBtn.innerText = "Submitting...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            
+            // Send data via AJAX to formsubmit
+            fetch('https://formsubmit.co/ajax/info@integralloans.com', {
+                method: 'POST',
+                headers: { 
+                    'Accept': 'application/json'
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Success
+                formContent.style.display = 'none';
+                successContent.style.display = 'block';
+                submitBtn.innerText = "Continue";
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                // In case of error
+                alert('An error occurred. Please try again.');
+                submitBtn.innerText = "Continue";
+                submitBtn.disabled = false;
+            });
+        });
+    </script>
+    
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,bn,te,mr,ta,ur,gu,kn,or,ml,pa,as,mai,sat,ks',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

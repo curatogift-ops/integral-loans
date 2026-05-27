@@ -1,19 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Personal Loans | Quick & Easy with Integral Loans</title>
-<link rel="stylesheet" href="styles.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-<style>.lp-hero { padding: 140px 5% 80px; background: linear-gradient(rgba(26, 58, 107, 0.9), rgba(26, 58, 107, 0.9)), url('https://images.unsplash.com/photo-1573164067507-406183a7b1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'); background-size: cover; color: white; text-align: center; }</style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Personal Loans | Integral Loans — Flexible Financial Solutions</title>
+<meta name="description" content="Meet your personal financial needs with flexible personal loan options and expert guidance from Integral Loans across Mumbai, Thane, Navi Mumbai & more."/>
+<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
-<nav class="navbar scrolled"><a class="nav-logo" href="index.html"><img src="WhatsApp Image 2026-05-05 at 11.20.59.jpeg"/></a></nav>
-<section class="lp-hero">
-  <span class="hero-badge" style="background:rgba(255,255,255,0.1);color:white;">Personal Loan</span>
-  <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">Flexible Personal Loans</h1>
-  <p style="margin: 20px 0 30px; opacity: 0.9;">Quick processing and minimal documentation for your urgent financial needs.</p>
-  <button class="btn btn-gold" onclick="openModal('Personal Loan')">Apply Now</button>
+
+<!-- TOP BAR -->
+<div class="nav-top-bar">
+  <div class="nav-top-left">
+    <span><i class="fa fa-clock"></i> Mon–Sat: 10:00 AM – 7:00 PM</span>
+    <span><i class="fa fa-location-dot"></i> Mumbai Metropolitan Region &amp; Palghar, Maharashtra, India</span>
+  </div>
+  <div class="nav-top-right">
+    <a href="mailto:info@integralloans.com"><i class="fa fa-envelope"></i> info@integralloans.com</a>
+    <a href="tel:+919167331557"><i class="fa fa-phone"></i> +91 91673 31557</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a class="nav-logo" href="index.html">
+    <img src="final-logo.png" alt="Integral Loans" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+    <span class="nav-logo-text" style="display:none">Integral Loans</span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#home">Home</a></li>
+    <li class="nav-dropdown">
+      <a href="index.html#services">Services <i class="fa fa-chevron-down" style="font-size:0.75rem;margin-left:4px;"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="home-loan.html">Home Loan</a></li>
+        <li><a href="mortgage-loan.html">Mortgage Loan</a></li>
+        <li><a href="sme-loan.html">SME Loan</a></li>
+        <li><a href="personal-loan.html">Personal Loan</a></li>
+        <li><a href="education-loan.html">Education Loan</a></li>
+        <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-cta">
+    <button class="btn btn-primary" onclick="openModal('Personal Loan')"><i class="fa fa-phone"></i> Apply Now</button>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<p class="breadcrumb"><a href="index.html">Home</a> / Personal Loan</p>
+
+<section class="loan-page-hero">
+  <h1>Meet Your Personal Financial Needs with Confidence</h1>
+  <p class="hero-sub">Whether it's a medical emergency, wedding, travel, or home renovation — Integral Loans helps you access flexible personal loan options with expert guidance, affordable EMIs, and a transparent process.</p>
+  <div class="hero-ctas" style="justify-content:center;display:flex;gap:14px;flex-wrap:wrap;">
+    <button class="btn btn-primary" onclick="openModal('Personal Loan')"><i class="fa fa-check-circle"></i> Check Your Eligibility</button>
+    <a href="index.html#contact" class="btn btn-outline btn-hero-outline"><i class="fa fa-envelope"></i> Contact Us</a>
+  </div>
+  <p class="loan-trust-line">Affordable EMIs. Transparent process. Faster approvals. Expert advisory.</p>
 </section>
+
+<section class="services">
+  <div class="loan-content">
+    <h2 class="section-title">Flexible Financing for Life's Priorities</h2>
+    <p>Personal loans provide unsecured funding for a wide range of needs — from medical expenses and home improvements to weddings, travel, and debt consolidation. With no collateral required, personal loans offer quick access to funds when you need them most.</p>
+    <p>At Integral Loans, we work closely with you to identify the right lender, negotiate favorable terms, and ensure a smooth application-to-disbursal experience.</p>
+  </div>
+</section>
+
+<section class="why-us">
+  <div class="text-center">
+    <h2 class="section-title">Why Choose Integral Loans for Personal Financing</h2>
+    <p class="section-sub">Expert guidance to help you make informed decisions about personal loans.</p>
+  </div>
+  <div class="highlight-grid" style="max-width:1000px;margin:0 auto;padding:0 5%;">
+    <div class="highlight-card"><h4>No Collateral Required</h4><p>Personal loans are unsecured — no property or asset pledge needed for approval.</p></div>
+    <div class="highlight-card"><h4>Quick Processing</h4><p>Faster approvals through organized documentation and proactive lender follow-ups.</p></div>
+    <div class="highlight-card"><h4>Flexible Usage</h4><p>Use the funds for medical bills, weddings, travel, renovations, debt consolidation, and more.</p></div>
+    <div class="highlight-card"><h4>Affordable EMIs</h4><p>We help you find repayment plans that fit your monthly budget and financial comfort.</p></div>
+    <div class="highlight-card"><h4>Transparent Guidance</h4><p>No hidden charges — clear, honest advisory from consultation to disbursal.</p></div>
+  </div>
+</section>
+
+<section class="how-we-work">
+  <div class="text-center">
+    <h2 class="section-title section-title-center">How It Works</h2>
+    <p class="section-sub">A simple, guided process from consultation to disbursal.</p>
+  </div>
+  <div class="steps-linear">
+    <div class="step-card"><div class="step-num">1</div><h4>Share Your Requirement</h4><p>Tell us about your financial need, loan amount, and repayment preference.</p></div>
+    <div class="step-connector"></div>
+    <div class="step-card"><div class="step-num">2</div><h4>Get Expert Guidance</h4><p>We help match your profile with the best lender and loan structure.</p></div>
+    <div class="step-connector"></div>
+    <div class="step-card"><div class="step-num">3</div><h4>Apply & Get Funded</h4><p>We assist with documentation, submission, and follow up until disbursal.</p></div>
+  </div>
+</section>
+
+<section class="loan-cta-strip">
+  <h2>Get the Financial Support You Need</h2>
+  <p>With the right guidance and the right loan partner, your personal financial goals are within reach. Start today.</p>
+  <div class="loan-cta-btns">
+    <button class="btn btn-primary" onclick="openModal('Personal Loan')">Speak to an Expert</button>
+    <a href="index.html#contact" class="btn btn-outline btn-hero-outline">Contact Us</a>
+  </div>
+  <p style="margin-top:24px;font-size:0.95rem;"><a href="mailto:info@integralloans.com" style="color:var(--accent-light)">info@integralloans.com</a> · <a href="tel:+919167331557" style="color:var(--accent-light)">91673 31557</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-col footer-about">
+      <img src="final-logo.png" alt="Integral Loans" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <span class="footer-logo-text" style="display:none; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--white); margin-bottom: 16px;">Integral Loans</span>
+      <p class="footer-note">Trusted loan advisors committed to affordable EMIs, transparent service, and faster loan approvals across MMR and Palghar.</p>
+      <div class="footer-contact-info">
+        <p><i class="fa fa-envelope"></i> <a href="mailto:info@integralloans.com">info@integralloans.com</a></p>
+        <p><i class="fa fa-phone"></i> <a href="tel:+919167331557">+91 91673 31557</a></p>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li><a href="home-loan.html">Home Loan</a></li>
+        <li><a href="mortgage-loan.html">Mortgage Loan</a></li>
+        <li><a href="sme-loan.html">SME Loan</a></li>
+        <li><a href="personal-loan.html">Personal Loan</a></li>
+        <li><a href="education-loan.html">Education Loan</a></li>
+        <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="index.html#how-we-work">Process</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Verification &amp; Legal</h4>
+      <ul>
+        <li><a href="kyc.html">KYC Verification</a></li>
+        <li><a href="terms.html">Terms &amp; Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">&copy; 2026 Integral Loans. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <span class="loan-type-badge" id="modalLoanBadge">Personal Loan</span>
+    <h2>Apply for Your Loan</h2>
+    <p class="modal-subtitle">Our expert will contact you within 24 hours.</p>
+    <form onsubmit="handleModalSubmit(event)">
+      <div class="form-row">
+        <div class="form-group"><label for="m-name">Full Name *</label><input type="text" id="m-name" required/></div>
+        <div class="form-group"><label for="m-phone">Mobile *</label><input type="tel" id="m-phone" required/></div>
+      </div>
+      <div class="form-group"><label for="m-email">Email</label><input type="email" id="m-email"/></div>
+      <div class="form-group"><label for="m-loan">Loan Type</label><select id="m-loan"><option selected>Personal Loan</option></select></div>
+      <div class="form-group"><label for="m-amount">Approximate Loan Amount</label><input type="text" id="m-amount" placeholder="e.g. ₹5 Lakhs"/></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa fa-paper-plane"></i> Submit</button>
+    </form>
+  </div>
+</div>
+
+<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;display:none;z-index:3000;font-weight:600;"><i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you!</span></div>
+
 <script src="main.js"></script>
 </body>
 </html>
