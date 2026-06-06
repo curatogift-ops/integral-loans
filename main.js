@@ -214,3 +214,101 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Homepage EMI Calculator logic
+let currentCalcType = 'home';
+
+function setCalcType(type, defaultRate) {
+    currentCalcType = type;
+    
+    // Update active tab styles
+    document.querySelectorAll('.calc-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+    
+    // Set default values based on loan type
+    const amountSlider = document.getElementById('home-calc-amount');
+    const rateSlider = document.getElementById('home-calc-rate');
+    const tenureSlider = document.getElementById('home-calc-tenure');
+    
+    if (type === 'home') {
+        amountSlider.value = 2500000;
+        rateSlider.value = 7.10;
+        tenureSlider.value = 20;
+    } else if (type === 'personal') {
+        amountSlider.value = 500000;
+        rateSlider.value = 10.50;
+        tenureSlider.value = 5;
+    } else if (type === 'sme') {
+        amountSlider.value = 1500000;
+        rateSlider.value = 9.00;
+        tenureSlider.value = 7;
+    } else if (type === 'mortgage') {
+        amountSlider.value = 2000000;
+        rateSlider.value = 8.50;
+        tenureSlider.value = 15;
+    }
+    
+    updateCalculator();
+}
+
+function updateCalculator() {
+    const amountSlider = document.getElementById('home-calc-amount');
+    const rateSlider = document.getElementById('home-calc-rate');
+    const tenureSlider = document.getElementById('home-calc-tenure');
+    
+    if (!amountSlider || !rateSlider || !tenureSlider) return;
+    
+    const P = parseFloat(amountSlider.value);
+    const annualRate = parseFloat(rateSlider.value);
+    const years = parseFloat(tenureSlider.value);
+    
+    // Update UI labels
+    document.getElementById('amount-val').textContent = '₹ ' + P.toLocaleString('en-IN');
+    document.getElementById('rate-val').textContent = annualRate.toFixed(2) + '%';
+    document.getElementById('tenure-val').textContent = years + (years === 1 ? ' Year' : ' Years');
+    
+    const r = annualRate / 12 / 100;
+    const n = years * 12;
+    
+    let emi = 0;
+    if (P > 0 && n > 0) {
+        emi = r === 0 ? P / n : (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+    
+    const monthlyEMI = Math.round(emi);
+    const totalAmount = monthlyEMI * n;
+    const totalInterest = Math.max(0, totalAmount - P);
+    
+    document.getElementById('res-emi').textContent = '₹ ' + monthlyEMI.toLocaleString('en-IN');
+    document.getElementById('res-principal').textContent = '₹ ' + P.toLocaleString('en-IN');
+    document.getElementById('res-interest').textContent = '₹ ' + totalInterest.toLocaleString('en-IN');
+    document.getElementById('res-total').textContent = '₹ ' + totalAmount.toLocaleString('en-IN');
+}
+
+function openModalFromCalc() {
+    let typeName = 'General Inquiry';
+    if (currentCalcType === 'home') typeName = 'Home Loan';
+    else if (currentCalcType === 'personal') typeName = 'Personal Loan';
+    else if (currentCalcType === 'sme') typeName = 'SME Loan';
+    else if (currentCalcType === 'mortgage') typeName = 'Mortgage Loan';
+    
+    const amountSlider = document.getElementById('home-calc-amount');
+    
+    openModal(typeName);
+    
+    // Pre-fill amount field in modal
+    const modalAmount = document.getElementById('m-amount');
+    if (modalAmount && amountSlider) {
+        const valLakhs = parseFloat(amountSlider.value) / 100000;
+        modalAmount.value = `₹ ${valLakhs} Lakhs`;
+    }
+}
+
+// Auto-run if elements exist on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('home-calc-amount')) {
+        updateCalculator();
+    }
+});
+

@@ -30,6 +30,7 @@
         <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
       </ul>
     </li>
+    <li><a href="blog.html">Blog</a></li>
     <li><a href="#why-us">Why Us</a></li>
     <li><a href="#how-we-work">Process</a></li>
     <li><a href="#testimonials">Testimonials</a></li>
@@ -279,18 +280,21 @@
       </div>
     </div>
     
-    <div class="expertise-stat">
-      <div class="stat-item">
-        <div class="stat-number">16+</div>
-        <div class="stat-label">Years of Core Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">6</div>
-        <div class="stat-label">Cities Served Across MMR</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">6</div>
-        <div class="stat-label">Loan Products Under One Roof</div>
+    <div class="about-image-wrapper">
+      <img src="WhatsApp Image 2026-06-03 at 11.31.18 PM.jpeg" alt="Integral Loans Team" class="about-img">
+      <div class="expertise-stat">
+        <div class="stat-item">
+          <div class="stat-number">16+</div>
+          <div class="stat-label">Years of Core Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Cities Served Across MMR</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Loan Products Under One Roof</div>
+        </div>
       </div>
     </div>
   </div>
@@ -368,6 +372,75 @@
   <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
 </section>
 
+<!-- EMI CALCULATOR -->
+<section class="calculator-section" id="calculator">
+  <div class="text-center">
+    <h2 class="section-title">Loan EMI Calculator</h2>
+    <p class="section-sub">Estimate your monthly repayments based on amount, rate, and tenure.</p>
+  </div>
+  <div class="calculator-wrapper">
+    <div class="calc-tabs">
+      <button type="button" class="calc-tab active" onclick="setCalcType('home', 7.10)">Home Loan</button>
+      <button type="button" class="calc-tab" onclick="setCalcType('personal', 10.50)">Personal Loan</button>
+      <button type="button" class="calc-tab" onclick="setCalcType('sme', 9.00)">SME Loan</button>
+      <button type="button" class="calc-tab" onclick="setCalcType('mortgage', 8.50)">Mortgage Loan</button>
+    </div>
+    
+    <div class="calc-grid">
+      <div class="calc-inputs">
+        <div class="calc-group">
+          <div class="calc-label-row">
+            <label for="home-calc-amount">Loan Amount</label>
+            <span class="calc-val-display" id="amount-val">₹ 25,00,000</span>
+          </div>
+          <input type="range" id="home-calc-amount" min="100000" max="10000000" step="100000" value="2500000" oninput="updateCalculator()"/>
+          <div class="range-limits"><span>₹ 1 Lakh</span><span>₹ 1 Crore</span></div>
+        </div>
+        
+        <div class="calc-group">
+          <div class="calc-label-row">
+            <label for="home-calc-rate">Interest Rate (% p.a.)</label>
+            <span class="calc-val-display" id="rate-val">7.10%</span>
+          </div>
+          <input type="range" id="home-calc-rate" min="5" max="20" step="0.05" value="7.10" oninput="updateCalculator()"/>
+          <div class="range-limits"><span>5%</span><span>20%</span></div>
+        </div>
+        
+        <div class="calc-group">
+          <div class="calc-label-row">
+            <label for="home-calc-tenure">Tenure</label>
+            <span class="calc-val-display" id="tenure-val">20 Years</span>
+          </div>
+          <input type="range" id="home-calc-tenure" min="1" max="30" step="1" value="20" oninput="updateCalculator()"/>
+          <div class="range-limits"><span>1 Year</span><span>30 Years</span></div>
+        </div>
+      </div>
+      
+      <div class="calc-results">
+        <div class="calc-result-box">
+          <span class="calc-res-label">Monthly EMI</span>
+          <div class="calc-res-value" id="res-emi">₹ 19,531</div>
+        </div>
+        <div class="calc-stats">
+          <div class="calc-stat-row">
+            <span>Principal Amount</span>
+            <span id="res-principal">₹ 25,00,000</span>
+          </div>
+          <div class="calc-stat-row">
+            <span>Interest Payable</span>
+            <span id="res-interest">₹ 21,87,358</span>
+          </div>
+          <div class="calc-stat-row total-row">
+            <span>Total Amount</span>
+            <span id="res-total">₹ 46,87,358</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="openModalFromCalc()" style="margin-top: 24px; width: 100%;"><i class="fa fa-paper-plane"></i> Apply for this Loan</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="text-center">
@@ -387,7 +460,11 @@
       </div>
       <div class="contact-item">
         <div class="contact-icon"><i class="fa fa-location-dot"></i></div>
-        <span>Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar</span>
+        <span><strong>Registered Office:</strong> 703, Ocean Pearl, Global City, Vasai Virar- W, Maharashtra - 401303</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fa fa-map"></i></div>
+        <span><strong>Service Areas:</strong> Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar</span>
       </div>
       <h3 class="join-us-heading">Join Us</h3>
       <p class="contact-follow-text">Stay updated with the latest financial insights and loan offers.</p>
@@ -464,6 +541,7 @@
       <div class="footer-contact-info">
         <p><i class="fa fa-envelope"></i> <a href="mailto:info@integralloans.com">info@integralloans.com</a></p>
         <p><i class="fa fa-phone"></i> <a href="tel:+919167331557">+91 91673 31557</a></p>
+        <p style="margin-top: 10px; line-height: 1.4; font-size: 0.85rem;"><i class="fa fa-map-marker-alt"></i> <strong>Registered Office Address:</strong><br>703, Ocean Pearl, Global City, Vasai Virar- W, Maharashtra - 401303</p>
       </div>
     </div>
     
@@ -489,6 +567,7 @@
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="#how-we-work">Process</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
