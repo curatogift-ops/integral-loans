@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>Integral Loans — Your Trusted Loan Advisor</title>
 <meta name="description" content="Affordable EMIs. Transparent processes. Faster approvals. Personalized loan support across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar & Palghar."/>
+<meta property="og:title" content="Integral Loans — Your Trusted Loan Advisor"/>
+<meta property="og:description" content="Affordable EMIs. Transparent processes. Faster approvals. Expert loan guidance across Mumbai, Thane, Navi Mumbai & MMR."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://integralloans.com/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://integralloans.com/"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FinancialService",
+  "name": "Integral Loans",
+  "description": "Trusted loan advisors offering Home, Mortgage, SME, Personal, Education and Vehicle loans across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar and Palghar.",
+  "url": "https://integralloans.com/",
+  "email": "info@integralloans.com",
+  "telephone": "+91-9167331557",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "703, Ocean Pearl, Global City, Vasai Virar- W",
+    "addressLocality": "Vasai Virar",
+    "addressRegion": "Maharashtra",
+    "postalCode": "401303",
+    "addressCountry": "IN"
+  },
+  "areaServed": ["Mumbai", "Thane", "Navi Mumbai", "Mira Bhayander", "Vasai-Virar", "Palghar"]
+}
+</script>
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -30,16 +56,17 @@
         <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
       </ul>
     </li>
+    <li><a href="about.html">About</a></li>
     <li><a href="blog.html">Blog</a></li>
-    <li><a href="#why-us">Why Us</a></li>
-    <li><a href="#how-we-work">Process</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
+    <li class="nav-hide-md"><a href="#why-us">Why Us</a></li>
+    <li class="nav-hide-md"><a href="#how-we-work">Process</a></li>
+    <li class="nav-hide-md"><a href="#testimonials">Testimonials</a></li>
     <li><a href="#contact">Contact</a></li>
     <li class="nav-meta-mobile"><a href="mailto:info@integralloans.com"><i class="fa fa-envelope"></i> info@integralloans.com</a></li>
     <li class="nav-meta-mobile"><a href="tel:+919167331557"><i class="fa fa-phone"></i> +91 91673 31557</a></li>
   </ul>
   <div class="nav-cta">
-    <button class="btn btn-primary" onclick="openModal('General Inquiry')"><i class="fa fa-phone"></i> Get Free Consultation</button>
+    <button class="btn btn-primary" onclick="openModal('General Inquiry')"><i class="fa fa-phone"></i> Get Your Free Loan Consultation</button>
   </div>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -52,11 +79,12 @@
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="hero-badge"><i class="fa fa-shield-halved"></i> 16+ Years of Trusted Expertise</div>
-    <h1>Integral Loans - Your Trusted Loan Advisor for <span>Every Stage of Life</span></h1>
+    <h1>Integral Loans — Your Trusted Loan Advisor for <span>Every Stage of Life</span></h1>
+    <p class="hero-banner-rotate" id="heroBannerRotate" aria-live="polite"></p>
     <p class="hero-sub">Affordable EMIs. Transparent processes. Faster approvals. Personalized support across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar.</p>
     <div class="hero-ctas">
-      <a href="https://wa.me/919167331557" target="_blank" class="btn btn-whatsapp btn-hero-cta"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
-      <button class="btn btn-outline btn-hero-outline" onclick="openModal('General Inquiry')"><i class="fa fa-file-alt"></i> Apply Online</button>
+      <button class="btn btn-primary btn-hero-cta" onclick="openModal('General Inquiry')"><i class="fa fa-phone"></i> Get Your Free Loan Consultation</button>
+      <a href="#contact" class="btn btn-outline btn-hero-outline"><i class="fa fa-file-alt"></i> Apply Now</a>
     </div>
     <div class="trust-badges">
       <div class="trust-badge"><i class="fa fa-lock"></i> 100% Secure</div>
@@ -69,7 +97,7 @@
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="text-center">
-    <h2 class="section-title">Explore Our Loan Products</h2>
+    <h2 class="section-title">Explore Our Services</h2>
     <p class="section-sub">Expert guidance across all major loan categories — Learn More for details or Apply Now to speak with our team.</p>
   </div>
   <div class="services-grid">
@@ -165,32 +193,27 @@
     <div class="why-card">
       <div class="why-icon"><i class="fa fa-handshake"></i></div>
       <h4>End-to-End Representation</h4>
-      <p>We prepare, present, and follow up loan applications with top-tier lenders on your behalf.</p>
+      <p>We prepare, present and follow up loan applications with banks on your behalf.</p>
     </div>
     <div class="why-card">
       <div class="why-icon"><i class="fa fa-scale-balanced"></i></div>
       <h4>Experienced Negotiators</h4>
-      <p>Years of lender relationships and deep negotiation expertise to secure highly favorable terms for you.</p>
+      <p>Years of lender relationships and negotiation expertise to get you favorable terms and faster approvals.</p>
     </div>
     <div class="why-card">
       <div class="why-icon"><i class="fa fa-location-dot"></i></div>
       <h4>Local Presence &amp; Quick Support</h4>
-      <p>Services across Mumbai Metropolitan Region &amp; Palghar for prompt, in-person assistance when needed.</p>
+      <p>Services across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar &amp; Palghar to offer timely, in-person help.</p>
     </div>
     <div class="why-card">
       <div class="why-icon"><i class="fa fa-layer-group"></i></div>
       <h4>Comprehensive Loan Coverage</h4>
-      <p>Expert assistance across Home, Mortgage, SME, Personal, Education, and Vehicle loans.</p>
+      <p>Assistance across Home, Mortgage, SME, Personal, Education and Vehicle loans.</p>
     </div>
     <div class="why-card">
       <div class="why-icon"><i class="fa fa-user-tie"></i></div>
       <h4>Personalized Guidance</h4>
-      <p>Tailored EMI structures and repayment solutions custom-designed around your unique cash flow.</p>
-    </div>
-    <div class="why-card">
-      <div class="why-icon"><i class="fa fa-eye"></i></div>
-      <h4>Transparent Processes</h4>
-      <p>Zero hidden charges, complete fee clarity, and honest advisory through every step of your application.</p>
+      <p>Tailored EMI options and repayment solutions designed around your cash flow and goals.</p>
     </div>
   </div>
 </section>
@@ -206,21 +229,29 @@
   <div class="steps-linear">
     <div class="step-card">
       <div class="step-num">1</div>
-      <h4>Discover Scheme &amp; Eligibility</h4>
-      <p>Share your needs — property, business plan, education fees, or vehicle details to explore eligible schemes.</p>
+      <h4>Free Consultation</h4>
+      <p>Share your needs — property, business plan, education fees, or vehicle details.</p>
     </div>
     <div class="step-connector" aria-hidden="true"></div>
     <div class="step-card">
       <div class="step-num">2</div>
-      <h4>Documentation &amp; Submission</h4>
-      <p>We assist to prepare documentation, compile files, shortlist suitable lenders, and submit applications.</p>
+      <h4>Document &amp; Application Handling</h4>
+      <p>We assist to prepare documentation, shortlist suitable lenders and submit applications.</p>
     </div>
     <div class="step-connector" aria-hidden="true"></div>
     <div class="step-card">
       <div class="step-num">3</div>
-      <h4>Sanction &amp; Disbursal</h4>
-      <p>We negotiate terms, follow up closely, coordinate the sanction, and assist until the loan is disbursed.</p>
+      <h4>Negotiation &amp; Disbursal</h4>
+      <p>We negotiate terms, follow up closely and assist until the loan is disbursed.</p>
     </div>
+  </div>
+</section>
+
+<!-- CLIENT PROMISE -->
+<section class="client-promise" id="client-promise">
+  <div class="client-promise-inner">
+    <h2 class="section-title section-title-light">Our Client Promise</h2>
+    <p>Clear timelines, proactive communication, and relentless pursuit of the best terms for your loan — every time.</p>
   </div>
 </section>
 
@@ -245,7 +276,10 @@
   <div class="about-container">
     <div class="about-content">
       <h2 class="section-title text-light">16+ Years of Expertise: Your Bridge to the Right Lender</h2>
-      <p class="about-desc">At Integral Loans, we proudly act as your personal financial shield. We collaborate with all major Nationalized Banks, Private Banks, and NBFCs across India. However, having access to these institutions is only half the battle. Every lender operates with different products, interest rates, and policies — we navigate this complexity to secure the perfect match for you.</p>
+      <p class="about-desc">At Integral Loans, we proudly collaborate with all major Nationalised Banks, Private Banks, and Non-Banking Financial Companies (NBFCs) across India. However, having access to these institutions is only half the battle.</p>
+      <p class="about-desc">Every lender operates with slightly different products, interest rates, processing fees, and internal policies. For an individual borrower, comparing these nuances and choosing the absolute best option is a daunting task. One wrong choice can lead to higher EMIs or unfavorable terms for years to come.</p>
+      <p class="about-desc">With a dedicated team boasting over 16+ years of core financial experience, we act as your personal financial shield. We have a deep, foundational knowledge of how these institutions operate from the inside out. We carefully analyze your financial profile and match it with the lender whose policies serve your best interests and long-term goals.</p>
+      <p style="margin-top:20px;"><a href="about.html" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:white;">Learn More About Us</a></p>
       
       <!-- Key Commitments Grid -->
       <div class="commitments-grid">
@@ -380,10 +414,12 @@
   </div>
   <div class="calculator-wrapper">
     <div class="calc-tabs">
-      <button type="button" class="calc-tab active" onclick="setCalcType('home', 7.10)">Home Loan</button>
-      <button type="button" class="calc-tab" onclick="setCalcType('personal', 10.50)">Personal Loan</button>
-      <button type="button" class="calc-tab" onclick="setCalcType('sme', 9.00)">SME Loan</button>
-      <button type="button" class="calc-tab" onclick="setCalcType('mortgage', 8.50)">Mortgage Loan</button>
+      <button type="button" class="calc-tab active" data-calc-type="home" onclick="setCalcType(this, 'home')">Home Loan</button>
+      <button type="button" class="calc-tab" data-calc-type="personal" onclick="setCalcType(this, 'personal')">Personal Loan</button>
+      <button type="button" class="calc-tab" data-calc-type="sme" onclick="setCalcType(this, 'sme')">SME Loan</button>
+      <button type="button" class="calc-tab" data-calc-type="mortgage" onclick="setCalcType(this, 'mortgage')">Mortgage Loan</button>
+      <button type="button" class="calc-tab" data-calc-type="education" onclick="setCalcType(this, 'education')">Education Loan</button>
+      <button type="button" class="calc-tab" data-calc-type="vehicle" onclick="setCalcType(this, 'vehicle')">Vehicle Loan</button>
     </div>
     
     <div class="calc-grid">
@@ -436,6 +472,7 @@
           </div>
         </div>
         <button type="button" class="btn btn-primary" onclick="openModalFromCalc()" style="margin-top: 24px; width: 100%;"><i class="fa fa-paper-plane"></i> Apply for this Loan</button>
+        <p class="calc-disclaimer">EMI shown is indicative. Final EMI depends on loan amount, tenure, interest rate, and lender terms.</p>
       </div>
     </div>
   </div>
@@ -563,6 +600,7 @@
       <h4>Quick Links</h4>
       <ul>
         <li><a href="#home">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#why-us">Why Us</a></li>
         <li><a href="#how-we-work">Process</a></li>

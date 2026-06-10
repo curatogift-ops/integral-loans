@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>Mortgage Loans | Integral Loans — Unlock Your Property's Value</title>
 <meta name="description" content="Unlock the value of your property with expert mortgage loan guidance from Integral Loans. Personalized support across Mumbai, Thane, Navi Mumbai, Mira Bhayander, Vasai-Virar & Palghar."/>
 <link rel="stylesheet" href="styles.css"/>
@@ -30,6 +30,7 @@
         <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
       </ul>
     </li>
+    <li><a href="about.html">About</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
@@ -146,27 +147,47 @@
   </div>
 </footer>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
     <span class="loan-type-badge" id="modalLoanBadge">Mortgage Loan</span>
     <h2>Apply for Your Loan</h2>
-    <p class="modal-subtitle">Our expert will contact you within 24 hours.</p>
+    <p class="modal-subtitle">Fill in the details below and our expert will contact you within 24 hours.</p>
     <form onsubmit="handleModalSubmit(event)">
       <div class="form-row">
-        <div class="form-group"><label for="m-name">Full Name *</label><input type="text" id="m-name" required/></div>
-        <div class="form-group"><label for="m-phone">Mobile *</label><input type="tel" id="m-phone" required/></div>
+        <div class="form-group"><label for="m-name">Full Name *</label><input type="text" id="m-name" placeholder="Your name" required/></div>
+        <div class="form-group"><label for="m-phone">Mobile *</label><input type="tel" id="m-phone" placeholder="10-digit number" required/></div>
       </div>
-      <div class="form-group"><label for="m-email">Email</label><input type="email" id="m-email"/></div>
-      <div class="form-group"><label for="m-loan">Loan Type</label><select id="m-loan"><option selected>Mortgage Loan</option></select></div>
-      <div class="form-group"><label for="m-amount">Approximate Loan Amount</label><input type="text" id="m-amount" placeholder="e.g. ₹50 Lakhs"/></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa fa-paper-plane"></i> Submit</button>
+      <div class="form-group"><label for="m-email">Email</label><input type="email" id="m-email" placeholder="Email address"/></div>
+      <div class="form-group"><label for="m-loan">Loan Type</label>
+        <select id="m-loan">
+          <option>Home Loan</option>
+          <option>Mortgage Loan</option>
+          <option>SME Loan</option>
+          <option>Personal Loan</option>
+          <option>Education Loan</option>
+          <option>Vehicle Loan</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="m-amount">Approximate Loan Amount</label><input type="text" id="m-amount" placeholder="e.g. ₹25 Lakhs"/></div>
+      <div class="form-group"><label for="m-city">City</label>
+        <select id="m-city">
+          <option value="">Select city</option>
+          <option>Mumbai</option>
+          <option>Thane</option>
+          <option>Navi Mumbai</option>
+          <option>Mira Bhayander</option>
+          <option>Vasai-Virar</option>
+          <option>Palghar</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa fa-paper-plane"></i> Submit Application</button>
     </form>
   </div>
 </div>
 
-<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;display:none;z-index:3000;font-weight:600;"><i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you!</span></div>
+<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2);display:none;z-index:3000;font-weight:600;font-size:0.9rem;align-items:center;gap:10px;"><i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you! We'll contact you soon.</span></div>
 
 <script src="main.js"></script>
 </body>

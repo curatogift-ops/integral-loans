@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
 <title>Home Loan Starting at 7.10% p.a. | Premium Home Loan Assistance by Integral Loans</title>
 <meta name="description" content="Apply for a home loan starting at 7.10% p.a. with expert guidance from Integral Loans. Check your EMI, explore benefits, and get personalized support for a smoother loan journey."/>
+<meta property="og:title" content="Home Loan Starting at 7.10% p.a. | Integral Loans"/>
+<meta property="og:description" content="Premium home loan assistance starting at 7.10% p.a. EMI calculator, eligibility guidance & expert support across Mumbai & MMR."/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://integralloans.com/home-loan.html"/>
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
@@ -29,6 +33,7 @@
         <li><a href="vehicle-loan.html">Vehicle Loan</a></li>
       </ul>
     </li>
+    <li><a href="about.html">About</a></li>
     <li><a href="blog.html">Blog</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
@@ -171,8 +176,42 @@
 <section class="services">
   <div class="loan-content text-center">
     <h2 class="section-title">Trusted Support for One of Life's Biggest Decisions</h2>
-    <p>Choosing a home loan is not just about interest rates — it is about confidence, timing, and the right support. We aim to make your experience easier, faster, more transparent, more financially comfortable, and more rewarding.</p>
-    <p style="margin-top:20px;"><strong>Serving:</strong> Mumbai, Thane, Navi Mumbai, Vasai Virar, Palghar</p>
+    <p>Choosing a home loan is not just about interest rates — it is about confidence, timing, and the right support. At Integral Loans, we understand that every customer's journey is unique, which is why we provide personal involvement in every case.</p>
+    <p style="margin-top:16px;font-weight:600;color:var(--text-dark);">We aim to make your home loan experience:</p>
+    <div class="experience-goals">
+      <span class="experience-goal">Easier</span>
+      <span class="experience-goal">Faster</span>
+      <span class="experience-goal">More transparent</span>
+      <span class="experience-goal">More financially comfortable</span>
+      <span class="experience-goal">More rewarding</span>
+    </div>
+  </div>
+</section>
+
+<section class="regions" style="padding-top:40px;padding-bottom:40px;">
+  <div class="text-center">
+    <h2 class="section-title section-title-light">Serving Home Loan Clients Across</h2>
+    <div class="locations-list">
+      <span class="location-chip-static"><i class="fa fa-map-marker-alt"></i> Mumbai</span>
+      <span class="location-chip-static"><i class="fa fa-map-marker-alt"></i> Thane</span>
+      <span class="location-chip-static"><i class="fa fa-map-marker-alt"></i> Navi Mumbai</span>
+      <span class="location-chip-static"><i class="fa fa-map-marker-alt"></i> Vasai Virar</span>
+      <span class="location-chip-static"><i class="fa fa-map-marker-alt"></i> Palghar</span>
+    </div>
+    <p class="section-sub section-sub-light" style="margin-top:24px;">If you are searching for a home loan consultant near you, Integral Loans is ready to assist.</p>
+  </div>
+</section>
+
+<section class="loan-cta-strip" id="lead-capture">
+  <h2>Ready to Begin Your Homeownership Journey?</h2>
+  <p>Get expert support for your home loan and move forward with confidence.</p>
+  <p style="margin-bottom:24px;font-size:0.95rem;"><strong>Contact Us</strong><br>
+    <a href="mailto:info@integralloans.com" style="color:var(--accent-light)">info@integralloans.com</a> · <a href="tel:+919167331557" style="color:var(--accent-light)">91673 31557</a><br>
+    <span style="opacity:0.85;font-size:0.88rem;">Registered Office: 703, Ocean Pearl, Global City, Vasai Virar- W, Maharashtra - 401303</span>
+  </p>
+  <div class="loan-cta-btns">
+    <button class="btn btn-primary" onclick="openModal('Home Loan')">Speak to an Expert</button>
+    <a href="#emi-calculator" class="btn btn-outline btn-hero-outline">Check EMI &amp; Eligibility</a>
   </div>
 </section>
 
@@ -191,7 +230,9 @@
 
 <section class="loan-cta-strip">
   <h2>Make Your Dream Home a Reality</h2>
-  <p>With the right guidance, the right loan, and the right partner, your dream home is within reach. Start today.</p>
+  <p>With the right guidance, the right loan, and the right partner, your dream home is within reach.</p>
+  <p>Integral Loans brings together expertise, transparency, and personalized service to help you secure the home loan that suits you best.</p>
+  <p>Start today. Let's build your future, one step at a time.</p>
   <div class="loan-cta-btns">
     <button class="btn btn-primary" onclick="openModal('Home Loan')">Speak to an Expert</button>
     <a href="#emi-calculator" class="btn btn-outline btn-hero-outline">Check EMI &amp; Eligibility</a>
@@ -259,24 +300,45 @@
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
     <span class="loan-type-badge" id="modalLoanBadge">Home Loan</span>
     <h2>Apply for Your Loan</h2>
-    <p class="modal-subtitle">Our expert will contact you within 24 hours.</p>
+    <p class="modal-subtitle">Fill in the details below and our expert will contact you within 24 hours.</p>
     <form onsubmit="handleModalSubmit(event)">
       <div class="form-row">
-        <div class="form-group"><label for="m-name">Full Name *</label><input type="text" id="m-name" required/></div>
-        <div class="form-group"><label for="m-phone">Mobile *</label><input type="tel" id="m-phone" required/></div>
+        <div class="form-group"><label for="m-name">Full Name *</label><input type="text" id="m-name" placeholder="Your name" required/></div>
+        <div class="form-group"><label for="m-phone">Mobile *</label><input type="tel" id="m-phone" placeholder="10-digit number" required/></div>
       </div>
-      <div class="form-group"><label for="m-email">Email</label><input type="email" id="m-email"/></div>
-      <div class="form-group"><label for="m-loan">Loan Type</label><select id="m-loan"><option selected>Home Loan</option></select></div>
+      <div class="form-group"><label for="m-email">Email</label><input type="email" id="m-email" placeholder="Email address"/></div>
+      <div class="form-group"><label for="m-loan">Loan Type</label>
+        <select id="m-loan">
+          <option selected>Home Loan</option>
+          <option>Mortgage Loan</option>
+          <option>SME Loan</option>
+          <option>Personal Loan</option>
+          <option>Education Loan</option>
+          <option>Vehicle Loan</option>
+        </select>
+      </div>
       <div class="form-group"><label for="m-amount">Approximate Loan Amount</label><input type="text" id="m-amount" placeholder="e.g. ₹25 Lakhs"/></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa fa-paper-plane"></i> Submit</button>
+      <div class="form-group"><label for="m-city">City</label>
+        <select id="m-city">
+          <option value="">Select city</option>
+          <option>Mumbai</option>
+          <option>Thane</option>
+          <option>Navi Mumbai</option>
+          <option>Mira Bhayander</option>
+          <option>Vasai-Virar</option>
+          <option>Palghar</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px;"><i class="fa fa-paper-plane"></i> Submit Application</button>
     </form>
   </div>
 </div>
 
-<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;display:none;z-index:3000;font-weight:600;"><i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you!</span></div>
+<div id="toast" style="position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a3a6b,#2ab4c0);color:white;padding:16px 24px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.2);display:none;z-index:3000;font-weight:600;font-size:0.9rem;align-items:center;gap:10px;"><i class="fa fa-check-circle"></i> <span id="toastMsg">Thank you! We'll contact you soon.</span></div>
 
 <script src="main.js"></script>
 <script>
