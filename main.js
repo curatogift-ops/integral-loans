@@ -1,5 +1,5 @@
 // ─── Config ───
-const FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@integralloans.com';
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/rajkumarprajapati145@gmail.com';
 const WHATSAPP_URL = 'https://wa.me/919167331557';
 
 const PREMIUM_BANNERS = [
@@ -147,6 +147,12 @@ function setSubmitLoading(form, loading) {
     }
 }
 
+function redirectToThankYou(name) {
+    const params = new URLSearchParams();
+    if (name) params.set('name', name);
+    window.location.href = `thank-you.html?${params.toString()}`;
+}
+
 async function submitInquiry(payload) {
     const body = {
         _subject: payload.subject || 'New Loan Inquiry — Integral Loans',
@@ -177,8 +183,8 @@ async function submitInquiry(payload) {
             .filter(([k]) => !k.startsWith('_'))
             .map(([k, v]) => `${k}: ${v}`)
             .join('%0D%0A');
-        window.location.href = `mailto:info@integralloans.com?subject=${encodeURIComponent(body._subject)}&body=${mailBody}`;
-        return true;
+        window.location.href = `mailto:rajkumarprajapati145@gmail.com?subject=${encodeURIComponent(body._subject)}&body=${mailBody}`;
+        return false;
     }
 }
 
@@ -207,10 +213,10 @@ function handleFormSubmit(event) {
         message,
         source: 'Contact Form',
         subject: `Contact Inquiry — ${loanType}`
-    }).then(() => {
-        showToast(`Thank you, ${name}! Your inquiry has been sent successfully.`);
-        form.reset();
-    }).finally(() => setSubmitLoading(form, false));
+    }).then((success) => {
+        if (success) redirectToThankYou(name);
+        else setSubmitLoading(form, false);
+    }).catch(() => setSubmitLoading(form, false));
 }
 
 function handleModalSubmit(event) {
@@ -242,11 +248,14 @@ function handleModalSubmit(event) {
         amount,
         source: 'Apply Modal',
         subject: `Loan Application — ${loanType}`
-    }).then(() => {
-        closeModal();
-        showToast(`Thank you, ${name}! Your application has been submitted.`);
-        form.reset();
-    }).finally(() => setSubmitLoading(form, false));
+    }).then((success) => {
+        if (success) {
+            closeModal();
+            redirectToThankYou(name);
+        } else {
+            setSubmitLoading(form, false);
+        }
+    }).catch(() => setSubmitLoading(form, false));
 }
 
 // Testimonials carousel

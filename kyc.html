@@ -1126,7 +1126,7 @@
                         <div class="icon-wrapper"><i class="fa-solid fa-envelope"></i></div>
                         <div>
                             <strong>Email</strong>
-                            <p><a href="mailto:info@integralloans.com">info@integralloans.com</a></p>
+                            <p><a href="mailto:rajkumarprajapati145@gmail.com">rajkumarprajapati145@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -1277,7 +1277,7 @@
             const formData = new FormData(form);
             
             // Send data via AJAX to formsubmit
-            fetch('https://formsubmit.co/ajax/info@integralloans.com', {
+            fetch('https://formsubmit.co/ajax/rajkumarprajapati145@gmail.com', {
                 method: 'POST',
                 headers: { 
                     'Accept': 'application/json'
@@ -1286,11 +1286,10 @@
             })
             .then(response => response.json())
             .then(data => {
-                // Success
-                formContent.style.display = 'none';
-                successContent.style.display = 'block';
-                submitBtn.innerText = "Continue";
-                submitBtn.disabled = false;
+                const name = formData.get('name') || formData.get('fullname') || '';
+                const params = new URLSearchParams();
+                if (name) params.set('name', name);
+                window.location.href = 'thank-you.html?' + params.toString();
             })
             .catch(error => {
                 // In case of error

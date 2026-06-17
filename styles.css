@@ -1148,9 +1148,138 @@ section { padding: 50px 4%; }
   gap: 6px;
   transition: var(--transition);
   cursor: pointer;
+  text-decoration: none;
 }
 .blog-read-more:hover {
   color: var(--accent);
+}
+
+/* ─── BLOG ARTICLE PAGE ─── */
+.blog-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 100px 5% 60px;
+}
+.blog-article-header {
+  margin-bottom: 32px;
+}
+.blog-article-header .blog-card-tag {
+  position: static;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.blog-article-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--text-dark);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+.blog-article-body {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--gray-700);
+}
+.blog-article-body h2 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+  margin: 32px 0 12px;
+}
+.blog-article-body p {
+  margin-bottom: 16px;
+}
+.blog-article-body ul {
+  margin: 0 0 16px 1.25rem;
+}
+.blog-article-body li {
+  margin-bottom: 8px;
+}
+.blog-article-body a {
+  color: var(--primary-light);
+  font-weight: 600;
+}
+.blog-article-cta {
+  margin-top: 48px;
+  padding: 32px;
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  border: 1px solid var(--gray-200);
+}
+.blog-article-cta h3 {
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+.blog-article-cta p {
+  margin-bottom: 20px;
+  color: var(--gray-600);
+}
+
+/* ─── THANK YOU PAGE ─── */
+.thank-you-page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary) 0%, #0e4e5e 100%);
+  padding: 24px 5%;
+}
+.thank-you-section {
+  width: 100%;
+  max-width: 520px;
+}
+.thank-you-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+.thank-you-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(0,212,178,0.15), rgba(30,58,138,0.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--accent);
+}
+.thank-you-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+.thank-you-lead {
+  font-size: 1.05rem;
+  color: var(--text-dark);
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.thank-you-sub {
+  color: var(--gray-600);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+.thank-you-countdown {
+  font-size: 0.88rem;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+}
+.thank-you-countdown strong {
+  color: var(--primary-light);
+  font-size: 1.1rem;
+}
+.thank-you-btn {
+  width: 100%;
+  justify-content: center;
+}
+@media (min-width: 601px) {
+  .thank-you-btn { width: auto; }
 }
 
 /* ─── Small phone touch & layout tweaks ─── */
