@@ -323,6 +323,8 @@ function handleModalSubmit(event) {
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        if (this.closest('.nav-dropdown') === this.parentElement) return;
+
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
 
@@ -383,27 +385,178 @@ function initFloatingWhatsApp() {
 }
 
 // Mobile dropdown toggle + close menu on link tap
-document.addEventListener('DOMContentLoaded', () => {
-    const dropdown = document.querySelector('.nav-dropdown');
-    if (dropdown) {
-        const trigger = dropdown.querySelector('a');
-        trigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 900) {
-                e.preventDefault();
-                dropdown.classList.toggle('active');
-            }
-        });
+const SITE_SEARCH_INDEX = [
+    { title: 'Home', url: 'index.html', keywords: 'homepage integral loans' },
+    { title: 'Home Loan', url: 'home-loan.html', keywords: 'home housing property' },
+    { title: 'Mortgage Loan', url: 'mortgage-loan.html', keywords: 'mortgage lap property loan' },
+    { title: 'SME Loan', url: 'sme-loan.html', keywords: 'business sme msme' },
+    { title: 'Personal Loan', url: 'personal-loan.html', keywords: 'personal unsecured' },
+    { title: 'Education Loan', url: 'education-loan.html', keywords: 'education study student' },
+    { title: 'Vehicle Loan', url: 'vehicle-loan.html', keywords: 'car bike vehicle auto' },
+    { title: 'About Us', url: 'about.html', keywords: 'about team raj prajapati' },
+    { title: 'Blogs', url: 'blog.html', keywords: 'blog articles insights guides' },
+    { title: 'Home Loan Approval Tips', url: 'blog/home-loan-approval-tips.html', keywords: 'home loan approval tips' },
+    { title: 'Mortgage Loan Guide', url: 'blog/mortgage-loan-guide.html', keywords: 'mortgage guide lap' },
+    { title: 'SME vs Personal Loan', url: 'blog/sme-vs-personal-loan.html', keywords: 'sme personal business' },
+    { title: 'Contact Us', url: 'index.html#contact', keywords: 'contact apply inquiry' },
+    { title: 'KYC Verification', url: 'kyc.html', keywords: 'kyc partner verification' }
+];
+
+function isMobileNav() {
+    return window.innerWidth < 1200;
+}
+
+function initNavbarLayout() {
+    const navbar = document.getElementById('navbar');
+    if (!navbar || navbar.querySelector('.navbar-actions')) return;
+
+    const actions = document.createElement('div');
+    actions.className = 'navbar-actions';
+
+    const cta = navbar.querySelector('.nav-cta');
+    const hamburger = document.getElementById('hamburger');
+
+    if (cta) actions.appendChild(cta);
+    if (hamburger) actions.appendChild(hamburger);
+
+    navbar.appendChild(actions);
+}
+
+function resolveSearchUrl(path) {
+    if (/^(https?:|mailto:|tel:)/.test(path)) return path;
+    const inBlog = /\/blog\//.test(window.location.pathname);
+    if (path.startsWith('../')) return path;
+    if (inBlog && !path.includes('/')) return `../${path}`;
+    return path;
+}
+
+function initSiteSearch() {
+    if (document.body.classList.contains('kyc-page')) return;
+
+    const navbar = document.getElementById('navbar');
+    if (!navbar || document.getElementById('navSearchBtn')) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'nav-search-btn';
+    btn.id = 'navSearchBtn';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Search');
+    btn.innerHTML = '<i class="fa fa-search"></i><span class="nav-search-label">Search</span>';
+
+    const hamburger = document.getElementById('hamburger');
+    const actions = navbar.querySelector('.navbar-actions');
+    if (actions && hamburger) actions.insertBefore(btn, hamburger);
+    else navbar.insertBefore(btn, hamburger || null);
+
+    let panel = document.getElementById('searchPanel');
+    if (!panel) {
+        panel = document.createElement('div');
+        panel.className = 'search-panel';
+        panel.id = 'searchPanel';
+        panel.innerHTML = `
+            <div class="search-panel-backdrop" id="searchPanelBackdrop"></div>
+            <div class="search-panel-content" role="dialog" aria-label="Site search">
+                <div class="search-panel-header">
+                    <i class="fa fa-search"></i>
+                    <input type="search" id="siteSearchInput" placeholder="Search loans, pages, blogs..." autocomplete="off" />
+                    <button type="button" class="search-panel-close" id="searchPanelClose" aria-label="Close search">&times;</button>
+                </div>
+                <ul class="search-results" id="searchResults"></ul>
+            </div>
+        `;
+        document.body.appendChild(panel);
     }
 
-    const navLinks = document.getElementById('navLinks');
-    if (navLinks) {
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (navLinks.classList.contains('open')) toggleMenu();
-                if (dropdown) dropdown.classList.remove('active');
-            });
-        });
+    const input = document.getElementById('siteSearchInput');
+    const results = document.getElementById('searchResults');
+
+    function renderSearchResults(query = '') {
+        if (!results) return;
+        const q = query.trim().toLowerCase();
+        const matches = q
+            ? SITE_SEARCH_INDEX.filter(item =>
+                item.title.toLowerCase().includes(q) || item.keywords.toLowerCase().includes(q))
+            : SITE_SEARCH_INDEX;
+
+        results.innerHTML = matches.length
+            ? matches.map(item => `<li><a href="${resolveSearchUrl(item.url)}">${item.title}</a></li>`).join('')
+            : '<li class="search-no-results">No results found</li>';
     }
+
+    function openSearch() {
+        const navLinks = document.getElementById('navLinks');
+        if (navLinks && navLinks.classList.contains('open')) toggleMenu();
+
+        panel.classList.add('active');
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('search-open');
+        renderSearchResults(input ? input.value : '');
+        if (input) {
+            input.value = '';
+            renderSearchResults('');
+            setTimeout(() => input.focus(), 50);
+        }
+    }
+
+    function closeSearch() {
+        panel.classList.remove('active');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('search-open');
+    }
+
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (panel.classList.contains('active')) closeSearch();
+        else openSearch();
+    });
+
+    document.getElementById('searchPanelClose')?.addEventListener('click', closeSearch);
+    document.getElementById('searchPanelBackdrop')?.addEventListener('click', closeSearch);
+
+    input?.addEventListener('input', (e) => renderSearchResults(e.target.value));
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && panel.classList.contains('active')) closeSearch();
+    });
+}
+
+function initMobileNav() {
+    const navLinks = document.getElementById('navLinks');
+    if (!navLinks) return;
+
+    document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        const trigger = dropdown.querySelector(':scope > a');
+        if (!trigger) return;
+
+        trigger.addEventListener('click', (e) => {
+            if (!isMobileNav()) return;
+            e.preventDefault();
+            e.stopPropagation();
+
+            const willOpen = !dropdown.classList.contains('active');
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+            if (willOpen) dropdown.classList.add('active');
+        });
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            const dropdown = link.closest('.nav-dropdown');
+            const isDropdownTrigger = dropdown && dropdown.querySelector(':scope > a') === link;
+            if (isDropdownTrigger && isMobileNav()) return;
+
+            if (navLinks.classList.contains('open')) toggleMenu();
+            document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('active'));
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initNavbarLayout();
+    initMobileNav();
+    initSiteSearch();
 
     initPremiumBannerRotation();
     initFloatingWhatsApp();
